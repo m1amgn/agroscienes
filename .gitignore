@@ -207,4 +207,9 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/windows,pydev,python,react
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
+*backend/*/migrations/*
+!*backend/*/migrations
+!*backend/*/migrations/__init__.py
