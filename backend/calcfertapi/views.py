@@ -13,8 +13,10 @@ def get_form_data(request):
         climate_zone = ClimateZone.objects.all()
         default_concentrations = DefaultElementsConcentration.objects.all()
         serializer_culture = CultureSerializer(culture, many=True)
-        serializer_climate_zone = ClimateZoneSerializer(climate_zone, many=True)
-        serializer_default_concentrations = DefaultElementsConcentrationSerializer(default_concentrations, many=True)
+        serializer_climate_zone = ClimateZoneSerializer(
+            climate_zone, many=True)
+        serializer_default_concentrations = DefaultElementsConcentrationSerializer(
+            default_concentrations, many=True)
         return Response({'culture': serializer_culture.data, 'climate_zone': serializer_climate_zone.data, 'default_concentrations': serializer_default_concentrations.data})
 
     if request.method == 'POST':
