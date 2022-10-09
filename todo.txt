@@ -11,5 +11,4 @@ Fertilizer calculator
 
 
 Tank mix calculator
-
 Figure out with logic calculator and repeat steps. 
