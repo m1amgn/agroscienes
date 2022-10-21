@@ -7,8 +7,10 @@ Fertilizer calculator
 5. Make module with function which calculate concentration on 1 ha depends on user data or get default concentration from db.
 6. Add in view "post" json with element consumptions and element concentration from user's data or default concentration and return that json to frontend.
 7. Make component which build table with data from json and build graph.
-8. Make html and css styles.
+8. Add routes. 
+9. Make html and css styles.
 
 
 Tank mix calculator
-Figure out with logic calculator and repeat steps. 
+Figure out with logic calculator and repeat steps.
+Add routes. 
