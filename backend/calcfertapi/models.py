@@ -26,8 +26,7 @@ class ClimateZone(models.Model):
 
 class UserFormData(models.Model):
     culture = models.CharField(max_length=20, default='')
-    climate_zone = models.CharField(
-        max_length=50, default='')
+    climate_zone = models.CharField(max_length=50, default='')
     quantity_of_water = models.DecimalField(
         max_digits=5, decimal_places=2, blank=True, null=True)
     temperature = models.DecimalField(
@@ -65,6 +64,7 @@ class UserFormData(models.Model):
     Se = models.DecimalField(
         max_digits=6, decimal_places=3, blank=True, null=True)
     created_timestamp = models.DateTimeField(auto_now_add=True)
+    check_field = models.BooleanField(blank=True, null=True, default = False)
 
     def __str__(self):
         return str(self.created_timestamp)
@@ -155,7 +155,7 @@ class ElementsConsumption(models.Model):
         verbose_name_plural = 'Вынос элементов'
 
 
-class CalculatedData(models.Model):
+class CalculatedConcentration(models.Model):
     N = models.DecimalField(max_digits=6, decimal_places=3,
                             blank=True, null=True, default=0)
     P = models.DecimalField(max_digits=6, decimal_places=3,
@@ -192,5 +192,46 @@ class CalculatedData(models.Model):
         return str(self.created_timestamp)
 
     class Meta:
-        verbose_name = 'Посчитанные значения'
-        verbose_name_plural = 'Посчитанные значения'
+        verbose_name = 'Посчитанные значения концентраций'
+        verbose_name_plural = 'Посчитанные значения концентраций'
+
+
+class CalculatedConsumption(models.Model):
+    N = models.DecimalField(max_digits=6, decimal_places=3,
+                            blank=True, null=True, default=0)
+    P = models.DecimalField(max_digits=6, decimal_places=3,
+                            blank=True, null=True, default=0)
+    K = models.DecimalField(max_digits=6, decimal_places=3,
+                            blank=True, null=True, default=0)
+    Mg = models.DecimalField(
+        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+    S = models.DecimalField(max_digits=6, decimal_places=3,
+                            blank=True, null=True, default=0)
+    Ca = models.DecimalField(
+        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+    Fe = models.DecimalField(
+        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+    Mn = models.DecimalField(
+        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+    Zn = models.DecimalField(
+        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+    Cu = models.DecimalField(
+        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+    B = models.DecimalField(max_digits=6, decimal_places=3,
+                            blank=True, null=True, default=0)
+    Mo = models.DecimalField(
+        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+    Co = models.DecimalField(
+        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+    Ni = models.DecimalField(
+        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+    Se = models.DecimalField(
+        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+    created_timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return str(self.created_timestamp)
+
+    class Meta:
+        verbose_name = 'Посчитанные значения выноса элементов'
+        verbose_name_plural = 'Посчитанные значения выноса элементов'

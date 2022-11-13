@@ -1,6 +1,6 @@
 from dataclasses import fields
 from rest_framework import serializers
-from .models import Culture, ClimateZone, UserFormData, DefaultElementsConcentration, CalculatedData
+from .models import Culture, ClimateZone, UserFormData, DefaultElementsConcentration, CalculatedConcentration, CalculatedConsumption
 
 
 class CultureSerializer(serializers.ModelSerializer):
@@ -14,6 +14,12 @@ class ClimateZoneSerializer(serializers.ModelSerializer):
         model = ClimateZone
         fields = ('climate_zone',)
 
+
+class FormSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserFormData
+        fields = ('quantity_of_water', 'temperature', 'productivity', 'N', 'P',
+                  'K', 'Mg', 'S', 'Ca', 'Fe', 'Mn', 'Zn', 'Cu', 'B', 'Mo', 'Co', 'Ni', 'Se')
 
 class UserFormDataSerializer(serializers.ModelSerializer):
     class Meta:
@@ -29,8 +35,15 @@ class DefaultElementsConcentrationSerializer(serializers.ModelSerializer):
                   'Zn', 'Cu', 'B', 'Mo', 'Co', 'Ni', 'Se')
 
 
-class CalculatedDataSerializer(serializers.ModelSerializer):
+class CalculatedConcentrationSerializer(serializers.ModelSerializer):
     class Meta:
-        model = CalculatedData
+        model = CalculatedConcentration
         fields = ('N', 'P', 'K', 'Mg', 'S', 'Ca', 'Fe', 'Mn', 'Zn',
-                  'Cu', 'B', 'Mo', 'Co', 'Ni', 'Se', 'created_timestamp')
+                  'Cu', 'B', 'Mo', 'Co', 'Ni', 'Se')
+        
+        
+class CalculatedConsumptionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CalculatedConsumption
+        fields = ('N', 'P', 'K', 'Mg', 'S', 'Ca', 'Fe', 'Mn', 'Zn',
+                  'Cu', 'B', 'Mo', 'Co', 'Ni', 'Se')
