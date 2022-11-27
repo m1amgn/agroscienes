@@ -5,7 +5,7 @@ function ElementsForm() {
   const API_URL = "http://localhost:8000/api/calcfertapi/";
 
   const [dataToForm, setDataToForm] = useState("");
-  const [postData, setPostData] = useState({});
+  const [postData, setPostData] = useState("");
   const [serverData, setServerData] = useState({});
 
   useEffect(() => {
@@ -71,6 +71,7 @@ function ElementsForm() {
     setPostData((previousState) => {
       return {
         ...previousState,
+        ...userForm,
         culture: event.target.value,
       };
     });
@@ -89,7 +90,6 @@ function ElementsForm() {
     const target = event.target;
     const value = target.value;
     const name = target.name;
-
     setPostData((previousState) => {
       return {
         ...previousState,
@@ -101,33 +101,14 @@ function ElementsForm() {
   const submitHandler = (event) => {
     event.preventDefault();
     if (postData) {
-      let formDataKeys = Object.keys(userForm);
-      let postDataKeys = Object.keys(postData);
-      let keysArray = [];
-      for (let key of formDataKeys) {
-        if (!postDataKeys.includes(key)) {
-          keysArray.push(key);
-        }
-      }
-      for (let key of keysArray) {
-        const value = userForm[key];
-        const name = key;
-        setPostData((previousState) => {
-          return {
-            ...previousState,
-            [name]: value,
-          };
-        });
-      }
       postForm(API_URL, postData);
-      console.log(serverData);
     } else {
       window.alert("Hello world!");
     }
   };
 
-  async function postForm(url = API_URL, data = postData) {
-    const response = await fetch(url, {
+  function postForm(url = API_URL, data = postData) {
+    const response = fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -172,7 +153,9 @@ function ElementsForm() {
           <button type="submit">Рассчитать</button>
         </div>
       </form>
-      {/* <TableElements props={serverData}/> */}
+      <TableElements
+        serverData={serverData}
+      />
     </div>
   );
 }
