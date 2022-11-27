@@ -1,15 +1,15 @@
 Fertilizer calculator
 
 +1. Make form in App.js without styles. React receive json with fields for form and make form.
-+2. React collect data from form and send data to backend by json.
++2. React collect data from form and send data to backend by json (don't forget make check userform)
 +3. Make view which receive json data, serialize and add data to db.
-4. Make module with function which calculate consumptions depends on culture and needed productivity from 1 ha.
-5. Make module with function which calculate concentration on 1 ha depends on user data or get default concentration from db.
-6. Add in view "post" json with element consumptions and element concentration from user's data or default concentration and return that json to frontend.
++4. Make module with function which calculate consumptions depends on culture and needed productivity from 1 ha.
++5. Make module with function which calculate concentration on 1 ha depends on user data or get default concentration from db.
++6. Add in view "post" json with element consumptions and element concentration from user's data or default concentration and return that json to frontend.
 7. Make component which build table with data from json and build graph.
 8. Add routes. 
 9. Make html and css styles.
-10. Add user response form and answer (alert?)
+10. Add user response form and answer (alert or invisible div?)
 11. Make forms validation. Empty and digits and so on.
 12. Make independent components, which can reuse.
 
