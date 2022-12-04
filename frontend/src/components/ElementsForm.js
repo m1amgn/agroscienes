@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import TableElements from "./TableElements";
+import BarChart from "./BarElements";
 
 function ElementsForm() {
   const API_URL = "http://localhost:8000/api/calcfertapi/";
 
   const [dataToForm, setDataToForm] = useState("");
   const [postData, setPostData] = useState("");
-  const [serverData, setServerData] = useState({});
+  const [serverData, setServerData] = useState("");
 
   useEffect(() => {
     fetch(API_URL)
@@ -21,13 +22,16 @@ function ElementsForm() {
   const userForm = dataToForm["user_form"][0];
 
   const getCulturesList = cultureList.map((cultures) => (
-    <option key={cultures.id} value={cultures["culture"]}>
+    <option key={cultures["culture"]} value={cultures["culture"]}>
       {cultures["culture"]}
     </option>
   ));
 
   const getClimateZoneList = climateZoneList.map((climateZones) => (
-    <option key={climateZones.id} value={climateZones["climate_zone"]}>
+    <option
+      key={climateZones["climate_zone"]}
+      value={climateZones["climate_zone"]}
+    >
       {climateZones["climate_zone"]}
     </option>
   ));
@@ -128,7 +132,7 @@ function ElementsForm() {
     <div>
       <form onSubmit={submitHandler}>
         <div>
-          <label>
+          <label key="chooseCulture">
             Выберите культуру
             <select onChange={cultureChangeHandler}>
               <option value="">-------</option>
@@ -137,7 +141,7 @@ function ElementsForm() {
           </label>
         </div>
         <div>
-          <label>
+          <label key="chooseClimateZone">
             Выберите климатическую зону
             <select onChange={climateZoneChangeHandler}>
               <option value="">-------</option>
@@ -153,9 +157,8 @@ function ElementsForm() {
           <button type="submit">Рассчитать</button>
         </div>
       </form>
-      <TableElements
-        serverData={serverData}
-      />
+      <TableElements serverData={serverData} />
+      <BarChart serverData={serverData} />
     </div>
   );
 }
