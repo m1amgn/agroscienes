@@ -1,21 +1,22 @@
-// chart.js, recharts, nivo (есть песочница), vx (простой)
 import "./App.css";
 import React from "react";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Home } from "./Home";
 import ElementsForm from "./components/ElementsForm";
 import TankForm from "./components/TankForm";
+import NaviBar from "./components/NaviBar";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Link to="/elementsform">ElementsForm</Link>
-      <Link to="/tankform">TankForm</Link>
+    <Router>
+      <NaviBar />
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/elementsform" element={<ElementsForm />} />
         <Route path="/tankform" element={<TankForm />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 
