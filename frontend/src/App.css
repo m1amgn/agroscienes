@@ -1,3 +1,7 @@
+.body {
+  height: 100%;
+}
+
 .nav-link a {
   color: #adb1b8;
   text-decoration: none;
@@ -16,7 +20,6 @@ button a:hover {
   color: white;
 }
 
-
 .carousel-item {
   height: "300px";
 }
@@ -25,9 +28,21 @@ table {
   font-size: 14px;
 }
 
+@media (max-width: 600px) {
+  table {
+    font-size: 8px;
+  }
+}
+
 .elements-form-description {
   text-align: left;
   margin: 1% 10%;
+}
+
+@media (max-width: 1200px) {
+  .elements-form-description {
+    margin: 1% 5%;
+  }
 }
 
 .form-container {
@@ -43,8 +58,15 @@ table {
 }
 
 form {
-  padding: 1%;
+  margin: 1% 5%;
   font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  form {
+    font-size: 10px;
+    margin: 0 1%;
+  }
 }
 
 label {
@@ -59,7 +81,6 @@ select {
 
 .elements-form {
   text-align: right;
-
 }
 
 .button-container {
@@ -77,26 +98,33 @@ input {
 
 @media (max-width: 600px) {
   input {
-    width: 50px;
+    width: 40px;
   }
 }
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
-input[type='number'],
+input[type="number"],
 input[type="number"]:hover,
 input[type="number"]:focus {
-    appearance: none;
-    -moz-appearance: textfield;
+  appearance: none;
+  -moz-appearance: textfield;
 }
 
 .table-container {
   max-width: 100%;
   display: flex;
   justify-content: center;
+  margin: 1% 5%;
+}
+
+@media (max-width: 600px) {
+  .table-sm > :not(caption) > * > * {
+    padding: 0;
+  }
 }
 
 .graph-container {
@@ -104,11 +132,6 @@ input[type="number"]:focus {
   max-height: 500px;
   display: flex;
   justify-content: center;
-
-}
-
-canvas {
-  display: inline;
 }
 
 @media (max-width: 600px) {
@@ -117,30 +140,17 @@ canvas {
   }
 }
 
-@media (max-width: 600px) {
-  form {
-    font-size: 10px;
-  }
-}
-
-@media (max-width: 600px) {
-  table {
-    font-size: 8px;
-  }
-}
-
-@media (max-width: 600px) {
-  .table-sm>:not(caption)>*>* {
-    padding: 0;
-  }
+canvas {
+  display: inline;
 }
 
 @media (max-width: 600px) {
   .elements-form-description {
     font-size: 12px;
   }
-  
 }
+
+
 
 .card-body button a {
   color: white;

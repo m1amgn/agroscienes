@@ -49,6 +49,8 @@ function ElementsForm() {
               ? (key = "Средняя температура вегетации, С")
               : key && key === "productivity"
               ? (key = "Планируемая урожайность, ц/га")
+              : key && key === key
+              ? (key = "Содержание " + key + " мг/кг почвы")
               : key}
           </label>
           <input
@@ -56,6 +58,7 @@ function ElementsForm() {
             type="number"
             min="0.001"
             max="1000"
+            step="0.001"
             name={
               key === "Среднее количество осадков за сезон, мм"
                 ? (key = "quantity_of_water")
@@ -110,7 +113,7 @@ function ElementsForm() {
     if (postData) {
       postForm(API_URL, postData);
     } else {
-      window.alert("Hello world!");
+      window.alert("Необходимо, чтобы все поля были заполнены и выбраны!");
     }
   };
 
@@ -142,7 +145,7 @@ function ElementsForm() {
           исследований Российских и зарубежных агрохимических университетов.
         </p>
         <p>
-          Фундаментельным принципом проведения расчёта является Закон
+          Фундаментельной задачей, решаемой данным расчётом, является Закон
           ограничивающего (лимитирующего) фактора или Закон минимума Либиха -
           это один из фундаментальных законов в биологии, гласящий, что наиболее
           значим для организма тот фактор, который более всего отклоняется от
@@ -160,10 +163,6 @@ function ElementsForm() {
       </div>
       <form onSubmit={submitHandler}>
         <div className="form-container">
-          <div className="elements-form">
-            <label>Введите данные или воспользуйтесь средними значениями по умолчанию:</label>
-            {getUserForm(userForm)}
-          </div>
           <div className="select-container">
             <label key="chooseCulture">Выберите культуру:</label>
             <select onChange={cultureChangeHandler}>
@@ -181,9 +180,15 @@ function ElementsForm() {
               </Button>
             </div>
           </div>
+          <div className="elements-form">
+            <label>
+              Введите данные или воспользуйтесь средними значениями по
+              умолчанию:
+            </label>
+            {getUserForm(userForm)}
+          </div>
         </div>
       </form>
-
     </div>
   );
 }

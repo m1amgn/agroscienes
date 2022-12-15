@@ -33,7 +33,7 @@ function TableElements(props) {
   let consumptionsIdObjects = getIdObject(consumptionsArray);
 
   return (
-    <div>
+    <>
       <Table bordered hover size="sm">
         <thead>
           <tr>
@@ -63,7 +63,7 @@ function TableElements(props) {
           </tr>
         </tbody>
       </Table>
-    </div>
+    </>
   );
 }
 

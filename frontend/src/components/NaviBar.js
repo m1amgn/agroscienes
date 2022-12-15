@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function NaviBar() {
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" style = {{"padding-left": "15px"}}>
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" style = {{paddingLeft: "15px"}}>
         <Navbar.Brand>Agroscience</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
