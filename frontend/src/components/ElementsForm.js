@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import TableElements from "./TableElements";
 import BarChart from "./BarElements";
+import { Button } from "react-bootstrap";
 
 function ElementsForm() {
   const API_URL = "http://localhost:8000/api/calcfertapi/";
@@ -43,22 +44,24 @@ function ElementsForm() {
         <div>
           <label>
             {key === "quantity_of_water"
-              ? (key = "Количество осадков")
+              ? (key = "Среднее количество осадков за сезон, мм")
               : key && key === "temperature"
-              ? (key = "Температура")
+              ? (key = "Средняя температура вегетации, С")
               : key && key === "productivity"
-              ? (key = "Урожайность")
+              ? (key = "Планируемая урожайность, ц/га")
               : key}
           </label>
           <input
             key={key}
             type="number"
+            min="0.001"
+            max="1000"
             name={
-              key === "Количество осадков"
+              key === "Среднее количество осадков за сезон, мм"
                 ? (key = "quantity_of_water")
-                : key && key === "Температура"
+                : key && key === "Средняя температура вегетации, С"
                 ? (key = "temperature")
-                : key && key === "Урожайность"
+                : key && key === "Планируемая урожайность, ц/га"
                 ? (key = "productivity")
                 : key
             }
@@ -129,36 +132,58 @@ function ElementsForm() {
   }
 
   return (
-    <div>
+    <div className="elements-form-container">
+      <div className="elements-form-description">
+        <h3>Калькулятор удобрений</h3>
+        <p>
+          Алгоритмы расчёта базируются на методических рекомендациях по внесению
+          элементов питания с учетом коэффециентов использования питательных
+          элементов из почвы и удобрений, а также на результатах опытных
+          исследований Российских и зарубежных агрохимических университетов.
+        </p>
+        <p>
+          Фундаментельным принципом проведения расчёта является Закон
+          ограничивающего (лимитирующего) фактора или Закон минимума Либиха -
+          это один из фундаментальных законов в биологии, гласящий, что наиболее
+          значим для организма тот фактор, который более всего отклоняется от
+          оптимального его значения. Иными словами, продуктивность культурных
+          растений, в первую очередь, зависит от того питательного вещества
+          (минерального элемента), который представлен в почве наиболее слабо
+          относительно его оптимальной концентрации.
+        </p>
+      </div>
+      <div className="graph-container" id="chart">
+        <BarChart serverData={serverData} />
+      </div>
+      <div className="table-container">
+        <TableElements serverData={serverData} />
+      </div>
       <form onSubmit={submitHandler}>
-        <div>
-          <label key="chooseCulture">
-            Выберите культуру
+        <div className="form-container">
+          <div className="elements-form">
+            <label>Введите данные или воспользуйтесь средними значениями по умолчанию:</label>
+            {getUserForm(userForm)}
+          </div>
+          <div className="select-container">
+            <label key="chooseCulture">Выберите культуру:</label>
             <select onChange={cultureChangeHandler}>
               <option value="">-------</option>
               {getCulturesList}
             </select>
-          </label>
-        </div>
-        <div>
-          <label key="chooseClimateZone">
-            Выберите климатическую зону
+            <label key="chooseClimateZone">Выберите климатическую зону:</label>
             <select onChange={climateZoneChangeHandler}>
               <option value="">-------</option>
               {getClimateZoneList}
             </select>
-          </label>
-        </div>
-        <div>
-          <label>Введите данные</label>
-          {getUserForm(userForm)}
-        </div>
-        <div>
-          <button type="submit">Рассчитать</button>
+            <div className="button-container">
+              <Button variant="dark" size="sm" type="submit">
+                Рассчитать
+              </Button>
+            </div>
+          </div>
         </div>
       </form>
-      <TableElements serverData={serverData} />
-      <BarChart serverData={serverData} />
+
     </div>
   );
 }

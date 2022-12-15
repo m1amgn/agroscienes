@@ -3,19 +3,161 @@
   text-decoration: none;
 }
 
-.nav-link a:hover {
-  color: white;
-}
-
 button a {
   color: #76787a;
   text-decoration: none;
 }
 
 button a:hover {
-  color: black;
+  color: #76787a;
 }
+
+.nav-link a:hover {
+  color: white;
+}
+
 
 .carousel-item {
   height: "300px";
+}
+
+table {
+  font-size: 14px;
+}
+
+.elements-form-description {
+  text-align: left;
+  margin: 1% 10%;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 15px;
+}
+
+.select-container {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+form {
+  padding: 1%;
+  font-size: 14px;
+}
+
+label {
+  line-height: 2em;
+  padding-right: 5px;
+}
+
+select {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.elements-form {
+  text-align: right;
+
+}
+
+.button-container {
+  text-align: right;
+  padding-top: 5%;
+}
+
+input {
+  font-family: inherit;
+  color: #212529;
+  border: 1px solid #bdbdbd;
+  border-radius: 0.25rem;
+  width: 70px;
+}
+
+@media (max-width: 600px) {
+  input {
+    width: 50px;
+  }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
+.table-container {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.graph-container {
+  padding: 0 2% 0 2%;
+  max-height: 500px;
+  display: flex;
+  justify-content: center;
+
+}
+
+canvas {
+  display: inline;
+}
+
+@media (max-width: 600px) {
+  .graph-container {
+    padding: 1%;
+  }
+}
+
+@media (max-width: 600px) {
+  form {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  table {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .table-sm>:not(caption)>*>* {
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .elements-form-description {
+    font-size: 12px;
+  }
+  
+}
+
+.card-body button a {
+  color: white;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .cards-container {
+    flex-direction: column;
+  }
+}
+
+.card {
+  margin: 1% 5%;
 }

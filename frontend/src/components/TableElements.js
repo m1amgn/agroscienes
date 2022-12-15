@@ -1,4 +1,5 @@
 import React from "react";
+import Table from 'react-bootstrap/Table';
 
 function TableElements(props) {
   const concentrationsValues = props["serverData"]["concentrations"];
@@ -10,13 +11,13 @@ function TableElements(props) {
   if (concentrationsValues) {
     for (let [key, value] of Object.entries(concentrationsValues[0])) {
       elementsArray.push(key);
-      concentrationsArray.push(value);
+      concentrationsArray.push(parseFloat(value).toFixed(2));
     }
   }
 
   if (consumptionsValues) {
     for (let value of Object.values(consumptionsValues[0])) {
-      consumptionsArray.push(value);
+      consumptionsArray.push(parseFloat(value).toFixed(2));
     }
   }
 
@@ -33,7 +34,7 @@ function TableElements(props) {
 
   return (
     <div>
-      <table>
+      <Table bordered hover size="sm">
         <thead>
           <tr>
             {elementsArray.length > 1
@@ -61,7 +62,7 @@ function TableElements(props) {
               : null}
           </tr>
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 }

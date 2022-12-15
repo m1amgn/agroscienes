@@ -43,12 +43,12 @@ function BarChart(props) {
       {
         label: "Доступные элементы в почве, кг/га",
         data: concentrationsArray,
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        backgroundColor: "rgba(53, 162, 235, 0.5)",
       },
       {
         label: "Необходимая концентрация элементов питания, кг/га",
         data: consumptionArray,
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
       },
     ],
   };
