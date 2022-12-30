@@ -8,13 +8,18 @@ Fertilizer calculator
 +6. Add in view "post" json with element consumptions and element concentration from user's data or default concentration and return that json to frontend.
 +7. Make component which build table with data from json and build graph.
 +8. Add routes.
-??? Make react bootstrap form???
-9. Make html and css styles.
++9. Make html and css styles.
+
+Change places productivity and quantity_of_water
+Tank mix calculator
+Figure out with logic calculator and repeat steps.
+
+
 10. Add user response form and answer (alert or invisible div?)
 11. Make forms validation. Empty and digits and so on.
 12. Make independent components, which can reuse.
 
 
-Tank mix calculator
-Figure out with logic calculator and repeat steps.
+
 Add routes. 
+
