@@ -150,8 +150,6 @@ canvas {
   }
 }
 
-
-
 .card-body button a {
   color: white;
 }
@@ -160,6 +158,7 @@ canvas {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  background-color: rgb(33, 37, 41);;
 }
 
 @media (max-width: 600px) {

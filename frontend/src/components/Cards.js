@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Cards() {
   return (
     <div className="cards-container">
-      <Card>
+      <Card bg="dark" border="dark" text="light">
         <Card.Body>
           <Card.Title>Калькулятор удобрений</Card.Title>
           <Card.Text>
@@ -13,12 +13,12 @@ function Cards() {
             элементов питания растений в зависимости от планируемой урожайности
             и условий вегетации.
           </Card.Text>
-          <Button variant="dark">
+          <Button variant="outline-secondary">
             <Link to="/elementsform">Перейти</Link>
           </Button>
         </Card.Body>
       </Card>
-      <Card>
+      <Card bg="dark" border="dark" text="light">
         <Card.Body>
           <Card.Title>Калькулятор баковых смесей</Card.Title>
           <Card.Text>
@@ -26,7 +26,7 @@ function Cards() {
             стабилизаторов для предотвращения образования осадка в баковых
             смесях.
           </Card.Text>
-          <Button variant="dark">
+          <Button variant="outline-secondary">
             <Link to="/tankform">Перейти</Link>
           </Button>
         </Card.Body>
