@@ -15,6 +15,8 @@ class UserFormData(models.Model):
         max_digits=4, decimal_places=3, blank=True, null=True)
     current_pH = models.DecimalField(
         max_digits=4, decimal_places=3, blank=True, null=True)
+    planing_pH = models.DecimalField(
+        max_digits=4, decimal_places=3, blank=True, null=True)
     pesticide_1 = models.CharField(max_length=20, default='')
     form_pesticide_1 = models.CharField(max_length=5, default='')
     consumption_pesticide_1 = models.DecimalField(

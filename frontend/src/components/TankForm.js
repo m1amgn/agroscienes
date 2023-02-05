@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
+import Accordion from "react-bootstrap/Accordion";
+import Table from "react-bootstrap/Table";
+
+import pictureHardness from "../hardness.jpeg";
+import picturepH from "../pH.jpg";
 
 function TankForm() {
   const API_URL = "http://localhost:8000/api/calctanktapi/";
@@ -20,143 +25,7 @@ function TankForm() {
   if (!dataToForm) return null;
   const userForm = dataToForm["user_form"][0];
 
-  const getUserForm = (userForm) => {
-    let content = [];
-    for (let [key, value] of Object.entries(userForm)) {
-      content.push(
-        <div>
-          <label>
-            {key === "quantity_of_ha"
-              ? (key = "Введите количество гектар, Га")
-              : key && key === "volume_of_water_tank"
-              ? (key = "Введите объем бака для воды, м3")
-              : key && key === "volume_of_mixer_tank"
-              ? (key = "Введите объем бака распылителя/растворного узла, м3")
-              : key && key === "quantity_of_mixture"
-              ? (key = "Введите объем внесения рабочего раствора, л/га")
-              : key && key === "current_hardness"
-              ? (key = "Введите жесткость тестируемой воды, Ж")
-              : key && key === "planing_hardness"
-              ? (key = "Целевая жесткость, Ж")
-              : key && key === "current_pH"
-              ? (key = "Введите pH")
-              : key && key === "pesticide_1"
-              ? (key = "Введите название пестицида")
-              : key && key === "form_pesticide_1"
-              ? (key = "Препаративная форма")
-              : key && key === "consumption_pesticide_1"
-              ? (key = "Расход л/га")
-              : key && key === "price_pesticide_1"
-              ? (key = "Цена СЗР")
-              : key && key === "pesticide_2"
-              ? (key = "Введите название пестицида")
-              : key && key === "form_pesticide_2"
-              ? (key = "Препаративная форма")
-              : key && key === "consumption_pesticide_2"
-              ? (key = "Расход л/га")
-              : key && key === "price_pesticide_2"
-              ? (key = "Цена СЗР")
-              : key && key === "pesticide_3"
-              ? (key = "Введите название пестицида")
-              : key && key === "form_pesticide_3"
-              ? (key = "Препаративная форма")
-              : key && key === "consumption_pesticide_3"
-              ? (key = "Расход л/га")
-              : key && key === "price_pesticide_3"
-              ? (key = "Цена СЗР")
-              : key && key === "complex_fertilizer"
-              ? (key = "Введите название МКУ")
-              : key && key === "consumption_complex_fertilizer"
-              ? (key = "Расход л/га")
-              : key && key === "price_complex_fertilizer"
-              ? (key = "Цена МКУ")
-              : key && key === "sas"
-              ? (key = "Введите название ПАВ")
-              : key && key === "consumption_sas"
-              ? (key = "Расход л/га")
-              : key && key === "price_sas"
-              ? (key = "Цена ПАВ")
-              : key}
-          </label>
-          <input
-            type={
-              key === "Введите название пестицида"
-                ? "text"
-                : key && key === "Препаративная форма"
-                ? "text"
-                : key && key === "Введите название ПАВ"
-                ? "text"
-                : key && key === "Введите название ПАВ"
-                ? "text"
-                : "number"
-            }
-            min="0.001"
-            max="1000"
-            step="0.001"
-            name={
-              key === "Введите количество гектар, Га"
-                ? (key = "quantity_of_ha")
-                : key && key === "Введите объем бака для воды, м3"
-                ? (key = "volume_of_water_tank")
-                : key && key === "Введите объем бака распылителя/растворного узла, м3"
-                ? (key = "volume_of_mixer_tank")
-                : key &&
-                  key === "Введите объем внесения рабочего раствора, л/га"
-                ? (key = "quantity_of_mixture")
-                : key && key === "Введите жесткость тестируемой воды, Ж"
-                ? (key = "current_hardness")
-                : key && key === "Целевая жесткость, Ж"
-                ? (key = "planing_hardness")
-                : key && key === "Введите pH"
-                ? (key = "current_pH")
-                : key && key === "Введите название пестицида"
-                ? (key = "pesticide_1")
-                : key && key === "Препаративная форма"
-                ? (key = "form_pesticide_1")
-                : key && key === "Расход л/га"
-                ? (key = "consumption_pesticide_1")
-                : key && key === "Цена СЗР"
-                ? (key = "price_pesticide_1")
-                : key && key === "Введите название пестицида"
-                ? (key = "pesticide_2")
-                : key && key === "Препаративная форма"
-                ? (key = "form_pesticide_2")
-                : key && key === "Расход л/га"
-                ? (key = "consumption_pesticide_2")
-                : key && key === "Цена СЗР"
-                ? (key = "price_pesticide_2")
-                : key && key === "Введите название пестицида"
-                ? (key = "pesticide_3")
-                : key && key === "Препаративная форма"
-                ? (key = "form_pesticide_3")
-                : key && key === "Расход л/га"
-                ? (key = "consumption_pesticide_3")
-                : key && key === "Цена СЗР"
-                ? (key = "price_pesticide_3")
-                : key && key === "Введите название МКУ"
-                ? (key = "complex_fertilizer")
-                : key && key === "Расход л/га"
-                ? (key = "consumption_complex_fertilizer")
-                : key && key === "Цена МКУ"
-                ? (key = "price_complex_fertilizer")
-                : key && key === "Введите название ПАВ"
-                ? (key = "sas")
-                : key && key === "Расход л/га"
-                ? (key = "consumption_sas")
-                : key && key === "Цена ПАВ"
-                ? (key = "price_sas")
-                : key
-            }
-            key={key}
-            onChange={inputElementsHandler}
-          />
-        </div>
-      );
-    }
-    return content;
-  };
-
-  const inputElementsHandler = (event) => {
+  const inputFieldHandler = (event) => {
     const target = event.target;
     const value = target.value;
     const name = target.name;
@@ -198,12 +67,333 @@ function TankForm() {
   return (
     <div>
       <form onSubmit={submitHandler}>
-        <div className="tank-form">
-          <label>
-            Введите данные или воспользуйтесь средними значениями по умолчанию:
-          </label>
-          {getUserForm(userForm)}
+        <h3>Калькулятор баковых смесей</h3>
+        <p>
+          Пожалуйста заполните поля ():
+        </p>
+        <div>
+          <label>Количество гектар, Га</label>
+          <input
+            type="number"
+            key="quantity_of_ha"
+            min="0.001"
+            max="1000"
+            step="0.001"
+            name="quantity_of_ha"
+            onChange={inputFieldHandler}
+          />
+          <label>Объем бака для воды, м3</label>
+          <input
+            type="number"
+            key="volume_of_water_tank"
+            min="0.001"
+            max="1000"
+            step="0.001"
+            name="volume_of_water_tank"
+            onChange={inputFieldHandler}
+          />
         </div>
+        <div>
+          <label>Объем бака распылителя, м3</label>
+          <input
+            type="number"
+            key="volume_of_mixer_tank"
+            min="0.001"
+            max="1000"
+            step="0.001"
+            name="volume_of_mixer_tank"
+            onChange={inputFieldHandler}
+          />
+          <label>Объем внесения рабочего раствора, л/га</label>
+          <input
+            type="number"
+            key="quantity_of_mixture"
+            min="0.001"
+            max="1000"
+            step="0.001"
+            name="quantity_of_mixture"
+            onChange={inputFieldHandler}
+          />
+        </div>
+        <div>
+          <label>Жесткость тестируемой воды, Ж*</label>
+          <input
+            type="number"
+            key="current_hardness"
+            min="0.001"
+            max="1000"
+            step="0.001"
+            name="current_hardness"
+            onChange={inputFieldHandler}
+          />
+          <label>Целевая жесткость, Ж</label>
+          <input
+            type="number"
+            key="planing_hardness"
+            min="0.001"
+            max="1000"
+            step="0.001"
+            name="planing_hardness"
+            onChange={inputFieldHandler}
+          />
+        </div>
+        <div>
+          <label>pH тестируемой воды**</label>
+          <input
+            type="number"
+            key="current_pH"
+            min="0.001"
+            max="1000"
+            step="0.001"
+            name="current_pH"
+            onChange={inputFieldHandler}
+          />
+          <label>Целевой pH</label>
+          <input
+            type="number"
+            key="planing_pH"
+            min="0.001"
+            max="1000"
+            step="0.001"
+            name="planing_pH"
+            onChange={inputFieldHandler}
+          />
+        </div>
+        <div>
+          <label>Введите название пестицида</label>
+          <input
+            type="text"
+            key="pesticide_1"
+            name="pesticide_1"
+            onChange={inputFieldHandler}
+          />
+          <label>Препаративная форма</label>
+          <input
+            type="text"
+            key="form_pesticide_1"
+            name="form_pesticide_1"
+            onChange={inputFieldHandler}
+          />
+          <label>Расход л/га</label>
+          <input
+            type="number"
+            key="consumption_pesticide_1"
+            min="0.001"
+            max="1000"
+            step="0.001"
+            name="consumption_pesticide_1"
+            onChange={inputFieldHandler}
+          />
+          <label>Цена СЗР</label>
+          <input
+            type="number"
+            key="price_pesticide_1"
+            min="0.001"
+            max="1000"
+            step="0.001"
+            name="price_pesticide_1"
+            onChange={inputFieldHandler}
+          />
+        </div>
+        <div>
+          <label>Введите название пестицида</label>
+          <input
+            type="text"
+            key="pesticide_2"
+            name="pesticide_2"
+            onChange={inputFieldHandler}
+          />
+          <label>Препаративная форма</label>
+          <input
+            type="text"
+            key="form_pesticide_2"
+            name="form_pesticide_2"
+            onChange={inputFieldHandler}
+          />
+          <label>Расход л/га</label>
+          <input
+            type="number"
+            key="consumption_pesticide_2"
+            min="0.001"
+            max="1000"
+            step="0.001"
+            name="consumption_pesticide_2"
+            onChange={inputFieldHandler}
+          />
+          <label>Цена СЗР</label>
+          <input
+            type="number"
+            key="price_pesticide_2"
+            min="0.001"
+            max="1000"
+            step="0.001"
+            name="price_pesticide_2"
+            onChange={inputFieldHandler}
+          />
+        </div>
+        <div>
+          <label>Введите название пестицида</label>
+          <input
+            type="text"
+            key="pesticide_3"
+            name="pesticide_3"
+            onChange={inputFieldHandler}
+          />
+          <label>Препаративная форма</label>
+          <input
+            type="text"
+            key="form_pesticide_3"
+            name="form_pesticide_3"
+            onChange={inputFieldHandler}
+          />
+          <label>Расход л/га</label>
+          <input
+            type="number"
+            key="consumption_pesticide_3"
+            min="0.001"
+            max="1000"
+            step="0.001"
+            name="consumption_pesticide_3"
+            onChange={inputFieldHandler}
+          />
+          <label>Цена СЗР</label>
+          <input
+            type="number"
+            key="price_pesticide_3"
+            min="0.001"
+            max="1000"
+            step="0.001"
+            name="price_pesticide_3"
+            onChange={inputFieldHandler}
+          />
+        </div>
+        <div>
+          <label>Введите название МКУ</label>
+          <input
+            type="text"
+            key="complex_fertilizer"
+            name="complex_fertilizer"
+            onChange={inputFieldHandler}
+          />
+          <label>Расход л/га</label>
+          <input
+            type="number"
+            key="consumption_complex_fertilizer"
+            min="0.001"
+            max="1000"
+            step="0.001"
+            name="consumption_complex_fertilizer"
+            onChange={inputFieldHandler}
+          />
+          <label>Цена МКУ</label>
+          <input
+            type="number"
+            key="price_complex_fertilizer"
+            min="0.001"
+            max="1000"
+            step="0.001"
+            name="price_complex_fertilizer"
+            onChange={inputFieldHandler}
+          />
+        </div>
+        <div>
+          <label>Введите название ПАВ</label>
+          <input
+            type="text"
+            key="sas"
+            name="sas"
+            onChange={inputFieldHandler}
+          />
+          <label>Расход л/га</label>
+          <input
+            type="number"
+            key="consumption_sas"
+            min="0.001"
+            max="1000"
+            step="0.001"
+            name="consumption_sas"
+            onChange={inputFieldHandler}
+          />
+          <label>Цена ПАВ</label>
+          <input
+            type="number"
+            key="price_sas"
+            min="0.001"
+            max="1000"
+            step="0.001"
+            name="price_sas"
+            onChange={inputFieldHandler}
+          />
+        </div>
+        <Accordion defaultActiveKey="0" flush>
+          <Accordion.Item eventKey="1">
+            <Accordion.Header>Определение жесткости*</Accordion.Header>
+            <Accordion.Body>
+              Для определения жесткости тестируемой воды нам потребуется
+              капельный тест для анализа воды на показатель общей жесткости
+              (gH). Проведение анализа: 1. Прополоскать мерный стаканчик
+              тестируемой водой. 2. Налить 5 мл. тестируемой воды. 3. Добавить 5
+              мл. дистиллированной воды и взболтать. 4. Отлить 5 мл. воды из
+              мерного стаканчика. 5. Добавлять индикатор в мерный стаканчик по
+              каплям, перемешивая содержимое круговыми движениями, до тех пор,
+              пока цвет раствора не изменится от светло-розового через
+              тёмно-розовый или красный к зелёному. Переход происходит быстро,
+              от одной капли. 6. Внесите число капель индикатора ниже. Для
+              определения требуемой жесткости изучите таблицы ниже.
+              <img
+                className="d-block w-10"
+                src={pictureHardness}
+                alt="Hardness"
+              />
+              <Table bordered hover size="sm">
+                <thead>
+                  <tr>
+                    <td>Вода</td>
+                    <td>Жесткость, мг-экв/л</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Очень мягкая вода</td>
+                    <td>до 1,5</td>
+                  </tr>
+                  <tr>
+                    <td>Мягкая вода</td>
+                    <td>от 1,5 до 4</td>
+                  </tr>
+                  <tr>
+                    <td>Вода средней жесткости</td>
+                    <td>от 4 до 8</td>
+                  </tr>
+                  <tr>
+                    <td>Жесткая вода</td>
+                    <td>от 8 до 12</td>
+                  </tr>
+                  <tr>
+                    <td>Очень жесткая вода</td>
+                    <td>более 12</td>
+                  </tr>
+                </tbody>
+              </Table>
+              *Рекомендуется использовать воду с жесткостью не более 7,5
+              мг-экв/л.
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
+        <Accordion defaultActiveKey="0" flush>
+          <Accordion.Item eventKey="1">
+            <Accordion.Header>Определение pH**</Accordion.Header>
+            <Accordion.Body>
+              Для определения pH тестируемой воды нам потребуются индикаторные
+              полоски pH. Проведение анализа: Налить в емкость 200 мл
+              тестируемой воды, вносить по 0,05 мл. инсулиновым шприцом Ph
+              корректор (RO 203),перемешивая раствор, до изменения цвета
+              лакмусовой полоски до нужного оттенка указанного в наборе данных
+              полосок. Ввести кол-во ед. (1 ед. 0,1 мл)
+              <img className="d-block w-3" src={picturepH} alt="pH" />
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
         <div className="button-container">
           <Button variant="dark" size="sm" type="submit">
             Рассчитать
