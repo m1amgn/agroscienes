@@ -28,31 +28,19 @@ def get_form_data(request):
             serializer = UserFormDataSerializer(data=request.data)
             if serializer.is_valid():
                 serializer.save()
-                
                 calculated_concentrations = calculate_concentrations(
                     serializer.data)
                 calculated_consumptions = calculate_consumptions(serializer.data)
-
-                serializer_concentrations = CalculatedConcentrationSerializer(
-                    data=calculated_concentrations)
-                if serializer_concentrations.is_valid():
+                serializer_concentrations = CalculatedConcentrationSerializer(data=calculated_concentrations)
+                serializer_consumption = CalculatedConsumptionSerializer(data=calculated_consumptions)
+                if serializer_concentrations.is_valid() and serializer_consumption.is_valid():
                     serializer_concentrations.save()
-                    # calculated_concentrations_json = json.dumps(
-                    #     calculated_concentrations)
-                    # print(calculated_concentrations_json)
-
-                serializer_consumption = CalculatedConsumptionSerializer(
-                    data=calculated_consumptions)
-                if serializer_consumption.is_valid():
                     serializer_consumption.save()
-                    # calculated_consumptions_json = json.dumps(
-                    #     calculated_consumptions)
-                    # print(calculated_consumptions_json)
-                calculated_concentrations_data = CalculatedConcentration.objects.all().order_by('-created_timestamp')[:1]
-                calculated_consumptions_data = CalculatedConsumption.objects.all().order_by('-created_timestamp')[:1]
-                serializer_concentrations_data = CalculatedConcentrationSerializer(calculated_concentrations_data, many=True)
-                serializer_consumptions_data = CalculatedConcentrationSerializer(calculated_consumptions_data, many=True)
-                return Response({"concentrations": serializer_concentrations_data.data, "consumptions": serializer_consumptions_data.data}, status=status.HTTP_201_CREATED)
+                    calculated_concentrations_data = CalculatedConcentration.objects.all().order_by('-created_timestamp')[:1]
+                    calculated_consumptions_data = CalculatedConsumption.objects.all().order_by('-created_timestamp')[:1]
+                    serializer_concentrations_data = CalculatedConcentrationSerializer(calculated_concentrations_data, many=True)
+                    serializer_consumptions_data = CalculatedConcentrationSerializer(calculated_consumptions_data, many=True)
+                    return Response({"concentrations": serializer_concentrations_data.data, "consumptions": serializer_consumptions_data.data}, status=status.HTTP_201_CREATED)
             return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             print(e)

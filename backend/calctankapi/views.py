@@ -18,4 +18,14 @@ def get_form_data(request):
         except Exception as e:
             print(e)
 
-  
+    if request.method == 'POST':
+        try:
+            serializer = UserFormDataSerializer(data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                print(serializer.data)
+                print(serializer.data['volume_of_water_tank'])
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            print(e)

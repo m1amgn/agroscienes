@@ -9,6 +9,7 @@ Fertilizer calculator
 +7. Make component which build table with data from json and build graph.
 +8. Add routes.
 +9. Make html and css styles.
+10. Check all inputs and models, make equally requirements, check all values depends on productivity and so on
 
 Change places productivity and quantity_of_water
 Tank mix calculator

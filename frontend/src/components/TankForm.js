@@ -7,23 +7,48 @@ import pictureHardness from "../hardness.jpeg";
 import picturepH from "../pH.jpg";
 
 function TankForm() {
-  const API_URL = "http://localhost:8000/api/calctanktapi/";
+  const API_URL = "http://localhost:8000/api/calctankapi/";
+  const postDataForm = {
+    quantity_of_ha: "",
+    volume_of_water_tank: "",
+    volume_of_mixer_tank: "",
+    quantity_of_mixture: "",
+    current_hardness: "",
+    planing_hardness: "",
+    decrease_pH: "",
+    pesticide_1: "",
+    form_pesticide_1: "",
+    consumption_pesticide_1: "",
+    price_pesticide_1: "",
+    pesticide_2: "",
+    form_pesticide_2: "",
+    consumption_pesticide_2: "",
+    price_pesticide_2: "",
+    pesticide_3: "",
+    form_pesticide_3: "",
+    consumption_pesticide_3: "",
+    price_pesticide_3: "",
+    complex_fertilizer: "",
+    consumption_complex_fertilizer: "",
+    price_complex_fertilizer: "",
+    sas: "",
+    consumption_sas: "",
+    price_sas: "",
+  };
 
-  const [dataToForm, setDataToForm] = useState("");
-  const [postData, setPostData] = useState("");
+  // const [dataToForm, setDataToForm] = useState("");
+  const [postData, setPostData] = useState(postDataForm);
   const [serverData, setServerData] = useState("");
 
-  useEffect(() => {
-    fetch(API_URL)
-      .then((res) => res.json())
-      .then(setDataToForm);
-  }, []);
+  // useEffect(() => {
+  //   fetch(API_URL)
+  //     .then((res) => res.json())
+  //     .then(setDataToForm);
+  // }, []);
 
   // if something went wrong at first check user_form from api
   // console.log(dataToForm);
-
-  if (!dataToForm) return null;
-  const userForm = dataToForm["user_form"][0];
+  // don't forget turn on check-field in api
 
   const inputFieldHandler = (event) => {
     const target = event.target;
@@ -68,9 +93,7 @@ function TankForm() {
     <div>
       <form onSubmit={submitHandler}>
         <h3>Калькулятор баковых смесей</h3>
-        <p>
-          Пожалуйста заполните поля ():
-        </p>
+        <p>Обязательные поля для заполнения:</p>
         <div>
           <label>Количество гектар, Га</label>
           <input
@@ -80,6 +103,7 @@ function TankForm() {
             max="1000"
             step="0.001"
             name="quantity_of_ha"
+            required
             onChange={inputFieldHandler}
           />
           <label>Объем бака для воды, м3</label>
@@ -90,6 +114,7 @@ function TankForm() {
             max="1000"
             step="0.001"
             name="volume_of_water_tank"
+            required
             onChange={inputFieldHandler}
           />
         </div>
@@ -102,6 +127,7 @@ function TankForm() {
             max="1000"
             step="0.001"
             name="volume_of_mixer_tank"
+            required
             onChange={inputFieldHandler}
           />
           <label>Объем внесения рабочего раствора, л/га</label>
@@ -112,11 +138,12 @@ function TankForm() {
             max="1000"
             step="0.001"
             name="quantity_of_mixture"
+            required
             onChange={inputFieldHandler}
           />
         </div>
         <div>
-          <label>Жесткость тестируемой воды, Ж*</label>
+          <label>Жесткость используемой воды, Ж</label>
           <input
             type="number"
             key="current_hardness"
@@ -124,6 +151,7 @@ function TankForm() {
             max="1000"
             step="0.001"
             name="current_hardness"
+            required
             onChange={inputFieldHandler}
           />
           <label>Целевая жесткость, Ж</label>
@@ -134,11 +162,69 @@ function TankForm() {
             max="1000"
             step="0.001"
             name="planing_hardness"
+            required
             onChange={inputFieldHandler}
           />
         </div>
+        <Accordion defaultActiveKey="0" flush>
+          <Accordion.Item eventKey="1">
+            <Accordion.Header>Определение жесткости</Accordion.Header>
+            <Accordion.Body>
+              Для определения жесткости тестируемой воды нам потребуется
+              капельный тест для анализа воды на показатель общей жесткости
+              (gH). Проведение анализа: 1. Прополоскать мерный стаканчик
+              тестируемой водой. 2. Налить 5 мл. тестируемой воды. 3. Добавить 5
+              мл. дистиллированной воды и взболтать. 4. Отлить 5 мл. воды из
+              мерного стаканчика. 5. Добавлять индикатор в мерный стаканчик по
+              каплям, перемешивая содержимое круговыми движениями, до тех пор,
+              пока цвет раствора не изменится от светло-розового через
+              тёмно-розовый или красный к зелёному. Переход происходит быстро,
+              от одной капли. 6. Число капель необходимо умножить на 0,712,
+              полученое значение будет жесткостью тестируемой воды, его
+              необходимо ввести в форму. Для определения требуемой жесткости
+              изучите таблицы ниже.
+              <img
+                className="d-block w-10"
+                src={pictureHardness}
+                alt="Hardness"
+              />
+              <Table bordered hover size="sm">
+                <thead>
+                  <tr>
+                    <td>Вода</td>
+                    <td>Жесткость, мг-экв/л</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Очень мягкая вода</td>
+                    <td>до 1,5</td>
+                  </tr>
+                  <tr>
+                    <td>Мягкая вода</td>
+                    <td>от 1,5 до 4</td>
+                  </tr>
+                  <tr>
+                    <td>Вода средней жесткости</td>
+                    <td>от 4 до 8</td>
+                  </tr>
+                  <tr>
+                    <td>Жесткая вода</td>
+                    <td>от 8 до 12</td>
+                  </tr>
+                  <tr>
+                    <td>Очень жесткая вода</td>
+                    <td>более 12</td>
+                  </tr>
+                </tbody>
+              </Table>
+              *Рекомендуется использовать воду с жесткостью не более 7,5
+              мг-экв/л.
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
         <div>
-          <label>pH тестируемой воды**</label>
+          <label>Единицы снижения pH</label>
           <input
             type="number"
             key="current_pH"
@@ -146,19 +232,27 @@ function TankForm() {
             max="1000"
             step="0.001"
             name="current_pH"
-            onChange={inputFieldHandler}
-          />
-          <label>Целевой pH</label>
-          <input
-            type="number"
-            key="planing_pH"
-            min="0.001"
-            max="1000"
-            step="0.001"
-            name="planing_pH"
+            required
             onChange={inputFieldHandler}
           />
         </div>
+        <Accordion defaultActiveKey="0" flush>
+          <Accordion.Item eventKey="1">
+            <Accordion.Header>Определение единиц снижения pH</Accordion.Header>
+            <Accordion.Body>
+              Для определения pH тестируемой воды нам потребуются корректор (pH-)
+              PT RO 203 и индикаторные полоски pH. Проведение анализа: Налить в
+              емкость 200 мл тестируемой воды, вносить по 0,05 мл. инсулиновым
+              шприцом корректор (pH-) РТ RO 203, перемешивая раствор, до изменения
+              цвета лакмусовой полоски до нужного оттенка указанного в наборе
+              данных полосок. Ввести количество в ед. (1 ед. - 0,1 мл
+              корректора).
+              <img className="d-block w-3" src={picturepH} alt="pH" />
+              *Среднее значение единиц корректора для снижения pH - 1,5.
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
+        <p>Заполните поля при необходимости:</p>
         <div>
           <label>Введите название пестицида</label>
           <input
@@ -325,75 +419,6 @@ function TankForm() {
             onChange={inputFieldHandler}
           />
         </div>
-        <Accordion defaultActiveKey="0" flush>
-          <Accordion.Item eventKey="1">
-            <Accordion.Header>Определение жесткости*</Accordion.Header>
-            <Accordion.Body>
-              Для определения жесткости тестируемой воды нам потребуется
-              капельный тест для анализа воды на показатель общей жесткости
-              (gH). Проведение анализа: 1. Прополоскать мерный стаканчик
-              тестируемой водой. 2. Налить 5 мл. тестируемой воды. 3. Добавить 5
-              мл. дистиллированной воды и взболтать. 4. Отлить 5 мл. воды из
-              мерного стаканчика. 5. Добавлять индикатор в мерный стаканчик по
-              каплям, перемешивая содержимое круговыми движениями, до тех пор,
-              пока цвет раствора не изменится от светло-розового через
-              тёмно-розовый или красный к зелёному. Переход происходит быстро,
-              от одной капли. 6. Внесите число капель индикатора ниже. Для
-              определения требуемой жесткости изучите таблицы ниже.
-              <img
-                className="d-block w-10"
-                src={pictureHardness}
-                alt="Hardness"
-              />
-              <Table bordered hover size="sm">
-                <thead>
-                  <tr>
-                    <td>Вода</td>
-                    <td>Жесткость, мг-экв/л</td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Очень мягкая вода</td>
-                    <td>до 1,5</td>
-                  </tr>
-                  <tr>
-                    <td>Мягкая вода</td>
-                    <td>от 1,5 до 4</td>
-                  </tr>
-                  <tr>
-                    <td>Вода средней жесткости</td>
-                    <td>от 4 до 8</td>
-                  </tr>
-                  <tr>
-                    <td>Жесткая вода</td>
-                    <td>от 8 до 12</td>
-                  </tr>
-                  <tr>
-                    <td>Очень жесткая вода</td>
-                    <td>более 12</td>
-                  </tr>
-                </tbody>
-              </Table>
-              *Рекомендуется использовать воду с жесткостью не более 7,5
-              мг-экв/л.
-            </Accordion.Body>
-          </Accordion.Item>
-        </Accordion>
-        <Accordion defaultActiveKey="0" flush>
-          <Accordion.Item eventKey="1">
-            <Accordion.Header>Определение pH**</Accordion.Header>
-            <Accordion.Body>
-              Для определения pH тестируемой воды нам потребуются индикаторные
-              полоски pH. Проведение анализа: Налить в емкость 200 мл
-              тестируемой воды, вносить по 0,05 мл. инсулиновым шприцом Ph
-              корректор (RO 203),перемешивая раствор, до изменения цвета
-              лакмусовой полоски до нужного оттенка указанного в наборе данных
-              полосок. Ввести кол-во ед. (1 ед. 0,1 мл)
-              <img className="d-block w-3" src={picturepH} alt="pH" />
-            </Accordion.Body>
-          </Accordion.Item>
-        </Accordion>
         <div className="button-container">
           <Button variant="dark" size="sm" type="submit">
             Рассчитать
