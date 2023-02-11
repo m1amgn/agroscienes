@@ -3,11 +3,9 @@ import React from "react";
 function CostsOnHa(props) {
   const costsData = props["serverData"]["costs_on_ha"];
   if (!costsData) return null;
-  console.log(costsData);
 
   const checkObjects = (obj) => {
     for (let [keys, values] of Object.entries(obj)) {
-      console.log(values);
       if ((values !== null) & (values !== "")) {
         return true;
       }
@@ -51,7 +49,7 @@ function CostsOnHa(props) {
     }
   };
 
-  const fertilizeSasCost= (costsDataCopy) => {
+  const fertilizeSasCost = (costsDataCopy) => {
     const fertilizeSasCost = JSON.parse(JSON.stringify(costsDataCopy));
     delete fertilizeSasCost["pesticide_1"];
     delete fertilizeSasCost["pesticide_2"];
@@ -68,8 +66,8 @@ function CostsOnHa(props) {
         <div>
           {fertilizeSasCost["costs_of_sas"] !== null ? (
             <p>
-              {fertilizeSasCost["sas"]} на Га{" "}
-              {fertilizeSasCost["costs_of_sas"]} Га
+              {fertilizeSasCost["sas"]} на Га {fertilizeSasCost["costs_of_sas"]}{" "}
+              рублей
             </p>
           ) : null}
           {fertilizeSasCost["costs_of_complex_fertilize"] !== null ? (

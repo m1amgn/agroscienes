@@ -88,7 +88,6 @@ function TankForm() {
       .then((response) => response.json())
       .then((data) => {
         setServerData(data);
-        console.log(serverData);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -105,9 +104,9 @@ function TankForm() {
           <input
             type="number"
             key="quantity_of_ha"
-            min="0.001"
-            max="1000"
-            step="0.001"
+            min="0.1"
+            max="10000"
+            step="0.1"
             name="quantity_of_ha"
             required
             onChange={inputFieldHandler}
@@ -116,22 +115,22 @@ function TankForm() {
           <input
             type="number"
             key="volume_of_water_tank"
-            min="0.001"
+            min="0.1"
             max="1000"
-            step="0.001"
+            step="0.1"
             name="volume_of_water_tank"
             required
             onChange={inputFieldHandler}
           />
         </div>
         <div>
-          <label>Объем бака распылителя, м3</label>
+          <label>Объем бака распылителя/растворного узла, м3</label>
           <input
             type="number"
             key="volume_of_mixer_tank"
-            min="0.001"
+            min="0.1"
             max="1000"
-            step="0.001"
+            step="0.1"
             name="volume_of_mixer_tank"
             required
             onChange={inputFieldHandler}
@@ -140,9 +139,9 @@ function TankForm() {
           <input
             type="number"
             key="quantity_of_mixture"
-            min="0.001"
+            min="0.1"
             max="1000"
-            step="0.001"
+            step="0.1"
             name="quantity_of_mixture"
             required
             onChange={inputFieldHandler}
@@ -153,9 +152,9 @@ function TankForm() {
           <input
             type="number"
             key="current_hardness"
-            min="0.001"
-            max="1000"
-            step="0.001"
+            min="0.01"
+            max="30"
+            step="0.01"
             name="current_hardness"
             required
             onChange={inputFieldHandler}
@@ -164,9 +163,9 @@ function TankForm() {
           <input
             type="number"
             key="planing_hardness"
-            min="0.001"
-            max="1000"
-            step="0.001"
+            min="0.01"
+            max="30"
+            step="0.01"
             name="planing_hardness"
             required
             onChange={inputFieldHandler}
@@ -176,12 +175,12 @@ function TankForm() {
           <Accordion.Item eventKey="1">
             <Accordion.Header>Определение жесткости</Accordion.Header>
             <Accordion.Body>
-              Для определения жесткости тестируемой воды нам потребуется
+              Для определения жесткости тестируемой воды потребуется
               капельный тест для анализа воды на показатель общей жесткости
-              (gH). Проведение анализа: 1. Прополоскать мерный стаканчик
-              тестируемой водой. 2. Налить 5 мл. тестируемой воды. 3. Добавить 5
-              мл. дистиллированной воды и взболтать. 4. Отлить 5 мл. воды из
-              мерного стаканчика. 5. Добавлять индикатор в мерный стаканчик по
+              (gH). Проведение анализа: 1. Прополоскать мерный стакан
+              тестируемой водой. 2. Налить 5 мл тестируемой воды. 3. Добавить 5
+              мл дистиллированной воды и взболтать. 4. Отлить 5 мл воды из
+              мерного стакана. 5. Добавлять индикатор в мерный стакан по
               каплям, перемешивая содержимое круговыми движениями, до тех пор,
               пока цвет раствора не изменится от светло-розового через
               тёмно-розовый или красный к зелёному. Переход происходит быстро,
@@ -234,9 +233,9 @@ function TankForm() {
           <input
             type="number"
             key="decrease_pH"
-            min="0.001"
-            max="1000"
-            step="0.001"
+            min="0.01"
+            max="12"
+            step="0.01"
             name="decrease_pH"
             required
             onChange={inputFieldHandler}
@@ -246,12 +245,12 @@ function TankForm() {
           <Accordion.Item eventKey="1">
             <Accordion.Header>Определение единиц снижения pH</Accordion.Header>
             <Accordion.Body>
-              Для определения pH тестируемой воды нам потребуются корректор
-              (pH-) PT RO 203 и индикаторные полоски pH. Проведение анализа:
-              Налить в емкость 200 мл тестируемой воды, вносить по 0,05 мл.
+              Для определения pH тестируемой воды потребуются корректор
+              (pH-) PT RO 203 и индикаторные тесты pH. Проведение анализа:
+              Налить в емкость 200 мл тестируемой воды, вносить по 0,05 мл
               инсулиновым шприцом корректор (pH-) РТ RO 203, перемешивая
               раствор, до изменения цвета лакмусовой полоски до нужного оттенка
-              указанного в наборе данных полосок. Ввести количество в ед. (1 ед.
+              указанного в наборе данных тестов. Ввести количество в единицах (1 ед.
               - 0,1 мл корректора).
               <img className="d-block w-3" src={picturepH} alt="pH" />
               *Среднее значение единиц корректора для снижения pH - 1,5.
@@ -274,12 +273,12 @@ function TankForm() {
             name="form_pesticide_1"
             onChange={inputFieldHandler}
           />
-          <label>Расход л/га</label>
+          <label>Расход л(кг)/га</label>
           <input
             type="number"
             key="consumption_pesticide_1"
             min="0.001"
-            max="1000"
+            max="20"
             step="0.001"
             name="consumption_pesticide_1"
             onChange={inputFieldHandler}
@@ -288,9 +287,9 @@ function TankForm() {
           <input
             type="number"
             key="price_pesticide_1"
-            min="0.001"
-            max="1000"
-            step="0.001"
+            min="0.1"
+            max="10000"
+            step="0.1"
             name="price_pesticide_1"
             onChange={inputFieldHandler}
           />
@@ -310,12 +309,12 @@ function TankForm() {
             name="form_pesticide_2"
             onChange={inputFieldHandler}
           />
-          <label>Расход л/га</label>
+          <label>Расход л(кг)/га</label>
           <input
             type="number"
             key="consumption_pesticide_2"
             min="0.001"
-            max="1000"
+            max="20"
             step="0.001"
             name="consumption_pesticide_2"
             onChange={inputFieldHandler}
@@ -324,9 +323,9 @@ function TankForm() {
           <input
             type="number"
             key="price_pesticide_2"
-            min="0.001"
-            max="1000"
-            step="0.001"
+            min="0.1"
+            max="10000"
+            step="0.1"
             name="price_pesticide_2"
             onChange={inputFieldHandler}
           />
@@ -346,12 +345,12 @@ function TankForm() {
             name="form_pesticide_3"
             onChange={inputFieldHandler}
           />
-          <label>Расход л/га</label>
+          <label>Расход л(кг)/га</label>
           <input
             type="number"
             key="consumption_pesticide_3"
             min="0.001"
-            max="1000"
+            max="20"
             step="0.001"
             name="consumption_pesticide_3"
             onChange={inputFieldHandler}
@@ -360,9 +359,9 @@ function TankForm() {
           <input
             type="number"
             key="price_pesticide_3"
-            min="0.001"
-            max="1000"
-            step="0.001"
+            min="0.1"
+            max="10000"
+            step="0.1"
             name="price_pesticide_3"
             onChange={inputFieldHandler}
           />
@@ -375,7 +374,7 @@ function TankForm() {
             name="sas"
             onChange={inputFieldHandler}
           />
-          <label>Расход л/га</label>
+          <label>Норма внесения мл/л рабочего раствора</label>
           <input
             type="number"
             key="consumption_sas"
@@ -389,9 +388,9 @@ function TankForm() {
           <input
             type="number"
             key="price_sas"
-            min="0.001"
-            max="1000"
-            step="0.001"
+            min="0.1"
+            max="10000"
+            step="0.1"
             name="price_sas"
             onChange={inputFieldHandler}
           />
@@ -408,9 +407,9 @@ function TankForm() {
           <input
             type="number"
             key="consumption_complex_fertilizer"
-            min="0.001"
+            min="0.1"
             max="1000"
-            step="0.001"
+            step="0.1"
             name="consumption_complex_fertilizer"
             onChange={inputFieldHandler}
           />
@@ -418,9 +417,9 @@ function TankForm() {
           <input
             type="number"
             key="price_complex_fertilizer"
-            min="0.001"
+            min="0.1"
             max="1000"
-            step="0.001"
+            step="0.1"
             name="price_complex_fertilizer"
             onChange={inputFieldHandler}
           />

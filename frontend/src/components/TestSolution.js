@@ -3,11 +3,9 @@ import React from "react";
 function TestSolution(props) {
   const recipeData = props["serverData"]["test_solution"];
   if (!recipeData) return null;
-  console.log(recipeData);
 
   const checkObjects = (obj) => {
     for (let [keys, values] of Object.entries(obj)) {
-      console.log(values);
       if ((values !== null) & (values !== "")) {
         return true;
       }
@@ -30,19 +28,19 @@ function TestSolution(props) {
           {pesticideRecipe["quantity_of_pesticide_1"] !== null ? (
             <p>
               Добавьте {pesticideRecipe["pesticide_1"]} в количестве{" "}
-              {pesticideRecipe["quantity_of_pesticide_1"]} л (кг).
+              {pesticideRecipe["quantity_of_pesticide_1"]} мл (г).
             </p>
           ) : null}
           {pesticideRecipe["quantity_of_pesticide_2"] !== null ? (
             <p>
               Добавьте {pesticideRecipe["pesticide_2"]} в количестве{" "}
-              {pesticideRecipe["quantity_of_pesticide_2"]} л (кг).
+              {pesticideRecipe["quantity_of_pesticide_2"]} мл (г).
             </p>
           ) : null}
           {pesticideRecipe["quantity_of_pesticide_3"] !== null ? (
             <p>
               Добавьте {pesticideRecipe["pesticide_3"]} в количестве{" "}
-              {pesticideRecipe["quantity_of_pesticide_3"]} л (кг).
+              {pesticideRecipe["quantity_of_pesticide_3"]} мл (г).
             </p>
           ) : null}
         </div>
@@ -68,16 +66,15 @@ function TestSolution(props) {
         <div>
           {fertilizeSasRecipe["quantity_of_sas"] !== null ? (
             <p>
-              Далее добавьте {fertilizeSasRecipe["sas"]} (если ПАВ Аллюр, то
+              Далее добавьте {fertilizeSasRecipe["sas"]} (если ПАВ на масляной основе, то
               добавлять первым) в количестве{" "}
-              {fertilizeSasRecipe["quantity_of_sas"]} л.
+              {fertilizeSasRecipe["quantity_of_sas"]} мл (г).
             </p>
           ) : null}
           {fertilizeSasRecipe["quantity_of_complex_fertilize"] !== null ? (
             <p>
               Далее добавьте {fertilizeSasRecipe["complex_fertilizer"]} в
-              количестве {fertilizeSasRecipe["quantity_of_complex_fertilize"]} л
-              (кг).
+              количестве {fertilizeSasRecipe["quantity_of_complex_fertilize"]} мл (г).
             </p>
           ) : null}
         </div>

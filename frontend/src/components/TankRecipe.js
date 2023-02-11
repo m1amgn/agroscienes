@@ -3,11 +3,9 @@ import React from "react";
 function TankRecipe(props) {
   const recipeData = props["serverData"]["recipe_on_tank"];
   if (!recipeData) return null;
-  console.log(recipeData);
 
   const checkObjects = (obj) => {
     for (let [keys, values] of Object.entries(obj)) {
-      console.log(values);
       if ((values !== null) & (values !== "")) {
         return true;
       }
@@ -68,7 +66,7 @@ function TankRecipe(props) {
         <div>
           {fertilizeSasRecipe["quantity_of_sas"] !== null ? (
             <p>
-              Далее добавьте {fertilizeSasRecipe["sas"]} (если ПАВ Аллюр, то
+              Далее добавьте {fertilizeSasRecipe["sas"]} (если ПАВ на масяной основе, то
               добавлять первым) в количестве{" "}
               {fertilizeSasRecipe["quantity_of_sas"]} л.
             </p>
@@ -97,13 +95,13 @@ function TankRecipe(props) {
       let content = [];
       content.push(
         <div>
-          <h3>Бак растворного узла</h3>
+          <h3>Рецепт на бак растворного узла/опрыскивателя</h3>
           <p>
             Заполнить бак растворного узла подготовленной водой на 2/3, при
-            постоянном перемешивании, вносить препараты в следующей
-            последовательности, при этом каждый предыдущий препарат должен
+            постоянном перемешивании, вносить препараты в 
+            последовательности, указанной ниже. При этом каждый предыдущий препарат должен
             полностью раствориться. Для приготовления рабочего раствора из
-            порошков необходимое количество препарата засыпают в отдельную малую
+            порошков, необходимое количество препарата засыпают в отдельную малую
             емкость, заливают небольшим количеством воды и встряхивают до
             получения однородной массы (маточного раствора):
           </p>

@@ -3,11 +3,9 @@ import React from "react";
 function FieldRecipe(props) {
   const recipeData = props["serverData"]["recipe_on_field"];
   if (!recipeData) return null;
-  console.log(recipeData);
 
   const checkObjects = (obj) => {
     for (let [keys, values] of Object.entries(obj)) {
-      console.log(values);
       if ((values !== null) & (values !== "")) {
         return true;
       }

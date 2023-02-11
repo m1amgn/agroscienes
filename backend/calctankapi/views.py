@@ -3,7 +3,7 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
-import json
+
 
 from .models import UserFormData, FieldRecipe, TankRecipe, TestSolution, CostsOnField, CostsOnHa
 from .serializers import UserFormDataSerializer, FieldRecipeSerializer, TankRecipeSerializer, TestSolutionSerializer, CostsOnFieldSerializer, CostsOnHaSerializer

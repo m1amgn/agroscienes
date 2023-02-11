@@ -3,11 +3,9 @@ import React from "react";
 function CostsOnField(props) {
   const costsData = props["serverData"]["costs_on_field"];
   if (!costsData) return null;
-  console.log(costsData);
 
   const checkObjects = (obj) => {
     for (let [keys, values] of Object.entries(obj)) {
-      console.log(values);
       if ((values !== null) & (values !== "")) {
         return true;
       }
