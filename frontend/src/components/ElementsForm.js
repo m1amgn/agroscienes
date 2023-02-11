@@ -57,7 +57,7 @@ function ElementsForm() {
             key={key}
             type="number"
             min="0.001"
-            max="1000"
+            max="10000"
             step="0.001"
             name={
               key === "Среднее количество осадков за сезон, мм"
