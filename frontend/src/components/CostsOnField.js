@@ -106,7 +106,7 @@ function CostsOnField(props) {
 
   return (
     <div>
-      <h3>Стоимость на поле</h3>
+      <h5>Стоимость на поле</h5>
       <p>РТ RO 260 (Ж-) на поле {costsOfRO260} руболей</p>
       <p>РТ RO 203 (pH-) на поле {costsOfRO203} рублей</p>
       {costDataShow(costsData)}

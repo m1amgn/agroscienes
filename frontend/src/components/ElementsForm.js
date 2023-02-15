@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import TableElements from "./TableElements";
 import BarChart from "./BarElements";
 import { Button } from "react-bootstrap";
+import "./ElementsForm.css";
 
 function ElementsForm() {
   const API_URL = "http://localhost:8000/api/calcfertapi/";
@@ -162,7 +163,7 @@ function ElementsForm() {
         <TableElements serverData={serverData} />
       </div>
       <form onSubmit={submitHandler}>
-        <div className="form-container">
+        <div className="elements-select-form">
           <div className="select-container">
             <label key="chooseCulture">Выберите культуру:</label>
             <select onChange={cultureChangeHandler}>

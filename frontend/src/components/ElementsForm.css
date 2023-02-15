@@ -1,0 +1,80 @@
+.elements-form-container {
+  margin-bottom: 50px;
+}
+
+
+.elements-form-description {
+  text-align: left;
+  margin: 1% 10%;
+}
+
+@media (max-width: 1200px) {
+  .elements-form-description {
+    margin: 1% 5%;
+  }
+}
+
+.elements-select-form {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 15px;
+  font-size: 14px;
+}
+
+@media (max-width: 1200px) {
+  .elements-select-form {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .elements-select-form {
+    font-size: 10px;
+  }
+}
+
+.select-container {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+label {
+  line-height: 2em;
+  padding-right: 5px;
+}
+
+select {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.elements-form {
+  text-align: right;
+}
+
+input {
+  font-family: inherit;
+  color: #212529;
+  border: 1px solid #bdbdbd;
+  border-radius: 0.25rem;
+  width: 70px;
+}
+
+@media (max-width: 600px) {
+  input {
+    width: 40px;
+  }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"],
+input[type="number"]:hover,
+input[type="number"]:focus {
+  appearance: none;
+  -moz-appearance: textfield;
+}

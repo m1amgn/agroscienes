@@ -1,0 +1,17 @@
+.nav-link a {
+    color: #adb1b8;
+    text-decoration: none;
+  }
+  
+  button a {
+    color: #76787a;
+    text-decoration: none;
+  }
+  
+  button a:hover {
+    color: #fff;
+  }
+  
+  .nav-link a:hover {
+    color: white;
+  }

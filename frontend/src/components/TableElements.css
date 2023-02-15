@@ -1,0 +1,22 @@
+table {
+    font-size: 14px;
+  }
+  
+  @media (max-width: 600px) {
+    table {
+      font-size: 8px;
+    }
+  }
+  
+  .table-container {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 1% 5%;
+  }
+  
+  @media (max-width: 600px) {
+    .table-sm > :not(caption) > * > * {
+      padding: 0;
+    }
+  }

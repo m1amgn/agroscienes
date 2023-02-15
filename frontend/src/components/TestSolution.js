@@ -92,7 +92,7 @@ function TestSolution(props) {
       let content = [];
       content.push(
         <div>
-          <h3>Тестовый раствор</h3>
+          <h5>Тестовый раствор</h5>
           <p>
             Тестовый раствор на 1 литр подготовленной воды:
           </p>

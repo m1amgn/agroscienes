@@ -18,7 +18,7 @@ Figure out with logic calculator and repeat steps.
 
 10. Add user response form and answer (alert or invisible div?)
 11. Make forms validation. Empty and digits and so on.
-12. Make independent components, which can reuse.
+12. Make independent components, which can reuse with itself css.
 13. Make comments.
 
 

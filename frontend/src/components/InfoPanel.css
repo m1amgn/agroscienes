@@ -1,0 +1,58 @@
+.InfoPanel-details {
+  height: 500px;
+  overflow-y: scroll;
+  transition: height 0.5s;
+}
+
+.InfoPanel-details.InfoPanel-details-closed {
+  height: 0;
+}
+
+.InfoPanel-btn {
+/* сброс стилей */
+padding: 0;
+border: none;
+font: inherit;
+color: inherit;
+background-color: transparent;
+cursor: pointer;
+
+/* сброс браузерных стилей для фокуса */
+outline: none;
+
+/* переопределение стилей для ссылок */
+display: inline-block;
+text-align: center;
+text-decoration: none;
+
+margin: 0 5px;
+
+/* невидимая рамка */
+border: solid 1px transparent;
+border-radius: 4px;
+
+/* для установки размеров используем паддинги */
+padding: 0.1em 1.2em;
+
+/* контрастные цвета */
+color: #ffffff;
+background-color: rgb(21, 112, 109);
+}
+
+.InfoPanel-btn:active {
+transform: translateY(1px);
+filter: saturate(150%);
+}
+
+.InfoPanel-btn:hover,
+.InfoPanel-btn:focus {
+color: rgb(21, 112, 109);
+border-color: currentColor;
+background-color: white;
+}
+
+/* сброс браузерных стилей для фокуса */
+.InfoPanel-btn::-moz-focus-inner {
+border: none;
+}
+

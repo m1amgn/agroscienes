@@ -1,5 +1,6 @@
 import React from "react";
 import Table from 'react-bootstrap/Table';
+import "./TableElements.css";
 
 function TableElements(props) {
   const concentrationsValues = props["serverData"]["concentrations"];

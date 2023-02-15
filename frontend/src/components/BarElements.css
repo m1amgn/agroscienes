@@ -1,0 +1,22 @@
+.graph-container {
+    padding: 0 2% 0 2%;
+    max-height: 500px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  @media (max-width: 600px) {
+    .graph-container {
+      padding: 1%;
+    }
+  }
+  
+  canvas {
+    display: inline;
+  }
+  
+  @media (max-width: 600px) {
+    .elements-form-description {
+      font-size: 12px;
+    }
+  }

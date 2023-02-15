@@ -106,7 +106,7 @@ function FieldRecipe(props) {
 
   return (
     <div>
-      <h3>Рецепт на поле</h3>
+      <h5>Рецепт на поле</h5>
       <p>Количество РТ RO 260 (Ж-) на поле {quantityOfRO260} л</p>
       <p>Количество РТ RO 203 (pH-) на поле {quantityOfRO203} л</p>
       {recipeDataShow(recipeData)}

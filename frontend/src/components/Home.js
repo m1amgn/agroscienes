@@ -1,11 +1,10 @@
 import React from "react";
-import Slider from "./components/Slider";
-import Cards from "./components/Cards";
+import Cards from "./Cards";
 
 export function Home() {
   return (
     <>
-      <Slider />
+      
       <Cards />
     </>
   );

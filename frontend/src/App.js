@@ -2,7 +2,7 @@ import "./App.css";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home } from "./Home";
+import { Home } from "./components/Home";
 import ElementsForm from "./components/ElementsForm";
 import TankForm from "./components/TankForm";
 import NaviBar from "./components/NaviBar";

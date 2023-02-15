@@ -106,7 +106,7 @@ function CostsOnHa(props) {
 
   return (
     <div>
-      <h3>Стоимость на Га</h3>
+      <h5>Стоимость на Га</h5>
       <p>РТ RO 260 (Ж-) на Га {costsOfRO260} рублей</p>
       <p>РТ RO 203 (pH-) на Га {costsOfRO203} рублей</p>
       {costDataShow(costsData)}

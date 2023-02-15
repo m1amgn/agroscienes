@@ -1,0 +1,27 @@
+.card-body button a {
+    color: white;
+  }
+  
+  .cards-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("../plant1.jpg");
+    height: 800px;
+    max-width: 100%;
+    background-size: cover;
+  }
+  
+  .card {
+    margin: 5% 30%;
+    opacity: 0.8;
+  }
+  
+  @media (max-width: 600px) {
+    .card {
+      margin: 5% 15%;
+    }
+  }
+  
+
+  
