@@ -74,21 +74,27 @@ input[type="number"]:focus {
   width: 100px;
 }
 
-.tank-form-container h5 {
-  padding: 10px 0;
-}
-
 .tank-form-container form {
   padding-bottom: 30px;
 }
 
 @media (max-width: 600px) {
-  .tank-form div {
-    display: inline-grid;
+  .tank-form-container form {
+    padding-bottom: 15px;
   }
 }
 
-.result-container {
-  border-top: 1px solid rgb(21, 112, 109);
-  border-bottom: 1px solid rgb(21, 112, 109);
+@media (max-width: 600px) {
+  .tank-form div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.tank-form-container h5 {
+  border-top: .5px solid rgb(21, 112, 109);
+  border-bottom: .5px solid rgb(21, 112, 109);
+  text-align: left;
+  margin: 10px 0;
+  padding: 10px 0;
 }
