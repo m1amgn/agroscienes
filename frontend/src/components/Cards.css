@@ -7,9 +7,15 @@
     flex-direction: column;
     justify-content: center;
     background-image: url("../plant1.jpg");
-    height: 800px;
+    height: 900px;
     max-width: 100%;
     background-size: cover;
+  }
+
+  @media (max-width: 1400px) {
+    .cards-container {
+      height: 700px;
+    }
   }
   
   .card {
