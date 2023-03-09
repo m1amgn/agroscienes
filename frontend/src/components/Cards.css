@@ -10,12 +10,7 @@
     height: 900px;
     max-width: 100%;
     background-size: cover;
-  }
-
-  @media (max-width: 1400px) {
-    .cards-container {
-      height: 700px;
-    }
+    flex: 1;
   }
   
   .card {
