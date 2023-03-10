@@ -7,7 +7,7 @@ function Footer() {
       <Container
         style={{ display: "flex", justifyContent: "center", padding: "5px" }}
       >
-        <p>Agroscience (c), 2023</p>
+        <p>Agroscientist (c), 2023</p>
       </Container>
     </Container>
   );
