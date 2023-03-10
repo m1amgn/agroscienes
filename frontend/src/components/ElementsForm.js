@@ -5,7 +5,7 @@ import { Button } from "react-bootstrap";
 import "./ElementsForm.css";
 
 function ElementsForm() {
-  const API_URL = "http://localhost:8000/api/calcfertapi/";
+  const API_URL = "http://5.39.219.185:8000/api/calcfertapi/";
 
   const [dataToForm, setDataToForm] = useState("");
   const [postData, setPostData] = useState("");
