@@ -7,7 +7,7 @@ function NaviBar() {
   return (
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" style = {{paddingLeft: "15px"}}>
-        <Navbar.Brand>Agroscience</Navbar.Brand>
+        <Navbar.Brand>Agroscientist</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
