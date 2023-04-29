@@ -1,0 +1,10 @@
+docker rmi $(docker images -q)
+docker rm $(docker ps -a -q)
+docker stop $(docker ps -a -q)
+docker ps -a
+sudo docker-compose up -d --build
+sudo docker exec -it agroscienes_backend_1 /bin/sh
+docker images
+sudo systemctl start docker
+sudo systemctl enable docker
+docker logs name

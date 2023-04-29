@@ -14,11 +14,11 @@ from .calculator import recipe_on_field_calculation, recipe_on_tank_calculation,
 def get_form_data(request):
     if request.method == 'GET':
         try:
-            user_form = UserFormData.objects.filter(check_field=True)
+            user_form = UserFormData.objects.get_queryset().filter(check_field=True)
             serializer_user_form = UserFormDataSerializer(user_form, many=True)
-            return Response({"user_form": serializer_user_form.data})
+            return Response(serializer_user_form.data, status=status.HTTP_200_OK, safe=False)
         except Exception as e:
-            print(e)
+            return Response({"error": str(e)}, status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'POST':
         try:
@@ -79,4 +79,4 @@ def get_form_data(request):
                                     status=status.HTTP_201_CREATED)
             return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
-            print(e)
+            return Response({"error": str(e)}, status=status.HTTP_404_NOT_FOUND)

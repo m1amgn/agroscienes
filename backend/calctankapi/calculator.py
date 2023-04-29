@@ -3,7 +3,6 @@ from .models import Prices
 
 def recipe_on_field_calculation(form_data):
     try:
-        form_data = form_data
         quantity_of_RO260 = round((float(form_data['current_hardness']) - float(form_data['planing_hardness'])) / 1.65 * 0.88*float(form_data['quantity_of_ha']) * float(form_data['quantity_of_mixture']) / 1000, 2)
         quantity_of_RO203 = round(float(form_data['decrease_pH']) * 5 * float(form_data['quantity_of_ha']) * float(form_data['quantity_of_mixture'])/1000, 2)
         if form_data['consumption_pesticide_1']:
@@ -43,11 +42,10 @@ def recipe_on_field_calculation(form_data):
         }
         return calculated_dict
     except Exception as e:
-        print(e)
+        print(f"Error in def recipe_on_field_calculation: {e}")
 
 def recipe_on_tank_calculation(form_data):
     try:
-        form_data = form_data
         quantity_of_RO260 = round((float(form_data['current_hardness']) - float(form_data['planing_hardness'])) / 1.65 * 0.88 * float(form_data['volume_of_water_tank']), 2)
         quantity_of_RO203 = round(float(form_data['decrease_pH']) * float(form_data['volume_of_water_tank']) / 2, 2)
         if form_data['consumption_pesticide_1']:
@@ -87,11 +85,10 @@ def recipe_on_tank_calculation(form_data):
         }
         return calculated_dict
     except Exception as e:
-        print(e)
+        print(f"Error in def recipe_on_tank_calculation: {e}")
                
 def test_solution_calculation(form_data):
     try:
-        form_data = form_data
         if form_data['consumption_pesticide_1']:
             quantity_of_pesticide_1 = round(float(form_data['consumption_pesticide_1']) / float(form_data['quantity_of_mixture']) * 1000, 2)
         else:
@@ -127,11 +124,10 @@ def test_solution_calculation(form_data):
         }
         return calculated_dict
     except Exception as e:
-        print(e)
+        print(f"Error in def test_solution_calculation: {e}")
         
 def costs_on_field_calculation(form_data):
     try:
-        form_data = form_data
         calculated_data = recipe_on_field_calculation(form_data)
         costs_of_RO260 = round(float(calculated_data['quantity_of_RO260']) * float(Prices.objects.all()[0].price_of_RO260), 2)
         costs_of_RO203 = round(float(calculated_data['quantity_of_RO203']) * float(Prices.objects.all()[0].price_of_RO203), 2)
@@ -172,11 +168,10 @@ def costs_on_field_calculation(form_data):
             }
         return calculated_dict
     except Exception as e:
-        print(e)
+        print(f"Error in def costs_on_field_calculation: {e}")
         
 def costs_on_ha_calculation(form_data):
     try:
-        form_data = form_data
         calculated_data = costs_on_field_calculation(form_data)
         for key, values in calculated_data.items():
             if type(values) is float:
@@ -184,4 +179,4 @@ def costs_on_ha_calculation(form_data):
                 calculated_data[key] = values
         return calculated_data
     except Exception as e:
-        print(e)
+        print(f"Error in def costs_on_ha_calculation: {e}")

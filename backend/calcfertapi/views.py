@@ -21,7 +21,7 @@ def get_form_data(request):
             serializer_user_form = FormSerializer(user_form, many=True)
             return Response({"culture": serializer_culture.data, "climate_zone": serializer_climate_zone.data, "user_form": serializer_user_form.data})
         except Exception as e:
-            print(e)
+            return Response({"error": str(e)}, status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'POST':
         try:
@@ -43,4 +43,4 @@ def get_form_data(request):
                     return Response({"concentrations": serializer_concentrations_data.data, "consumptions": serializer_consumptions_data.data}, status=status.HTTP_201_CREATED)
             return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
-            print(e)
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
