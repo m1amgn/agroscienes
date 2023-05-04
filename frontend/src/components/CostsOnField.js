@@ -27,20 +27,20 @@ function CostsOnField(props) {
         <div>
           {pesticideCost["costs_of_pesticide_1"] !== null ? (
             <p>
-              {pesticideCost["pesticide_1"]} на поле{" "}
-              {pesticideCost["costs_of_pesticide_1"]} рублей
+              {pesticideCost["pesticide_1"]} on field{" "}
+              {pesticideCost["costs_of_pesticide_1"]}
             </p>
           ) : null}
           {pesticideCost["costs_of_pesticide_2"] !== null ? (
             <p>
-              {pesticideCost["pesticide_2"]} на поле{" "}
-              {pesticideCost["costs_of_pesticide_2"]} рублей
+              {pesticideCost["pesticide_2"]} on field{" "}
+              {pesticideCost["costs_of_pesticide_2"]}
             </p>
           ) : null}
           {pesticideCost["costs_of_pesticide_3"] !== null ? (
             <p>
-              {pesticideCost["pesticide_3"]} на поле{" "}
-              {pesticideCost["costs_of_pesticide_3"]} рублей
+              {pesticideCost["pesticide_3"]} on field{" "}
+              {pesticideCost["costs_of_pesticide_3"]}
             </p>
           ) : null}
         </div>
@@ -49,7 +49,7 @@ function CostsOnField(props) {
     }
   };
 
-  const fertilizeSasCost= (costsDataCopy) => {
+  const fertilizeSasCost = (costsDataCopy) => {
     const fertilizeSasCost = JSON.parse(JSON.stringify(costsDataCopy));
     delete fertilizeSasCost["pesticide_1"];
     delete fertilizeSasCost["pesticide_2"];
@@ -66,14 +66,14 @@ function CostsOnField(props) {
         <div>
           {fertilizeSasCost["costs_of_sas"] !== null ? (
             <p>
-              {fertilizeSasCost["sas"]} на поле{" "}
-              {fertilizeSasCost["costs_of_sas"]} рублей
+              {fertilizeSasCost["sas"]} on field{" "}
+              {fertilizeSasCost["costs_of_sas"]}
             </p>
           ) : null}
           {fertilizeSasCost["costs_of_complex_fertilize"] !== null ? (
             <p>
-              {fertilizeSasCost["complex_fertilizer"]} на поле{" "}
-              {fertilizeSasCost["costs_of_complex_fertilize"]} рублей
+              {fertilizeSasCost["complex_fertilizer"]} on field{" "}
+              {fertilizeSasCost["costs_of_complex_fertilize"]}
             </p>
           ) : null}
         </div>
@@ -106,9 +106,9 @@ function CostsOnField(props) {
 
   return (
     <div>
-      <h5>Стоимость на поле</h5>
-      <p>РТ RO 260 (Ж-) на поле {costsOfRO260} рублей</p>
-      <p>РТ RO 203 (pH-) на поле {costsOfRO203} рублей</p>
+      <h5>Cost on field</h5>
+      <p>gH- on field {costsOfRO260}</p>
+      <p>pH- on field {costsOfRO203}</p>
       {costDataShow(costsData)}
     </div>
   );

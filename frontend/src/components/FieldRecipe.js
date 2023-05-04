@@ -27,20 +27,20 @@ function FieldRecipe(props) {
         <div>
           {pesticideRecipe["quantity_of_pesticide_1"] !== null ? (
             <p>
-              Количество {pesticideRecipe["pesticide_1"]} на поле{" "}
-              {pesticideRecipe["quantity_of_pesticide_1"]} л (кг).
+              Amount of {pesticideRecipe["pesticide_1"]} on field{" "}
+              {pesticideRecipe["quantity_of_pesticide_1"]} l (kg).
             </p>
           ) : null}
           {pesticideRecipe["quantity_of_pesticide_2"] !== null ? (
             <p>
-              Количество {pesticideRecipe["pesticide_2"]} на поле{" "}
-              {pesticideRecipe["quantity_of_pesticide_2"]} л (кг).
+              Amount of {pesticideRecipe["pesticide_2"]} on field{" "}
+              {pesticideRecipe["quantity_of_pesticide_2"]} l (kg).
             </p>
           ) : null}
           {pesticideRecipe["quantity_of_pesticide_3"] !== null ? (
             <p>
-              Количество {pesticideRecipe["pesticide_3"]} на поле{" "}
-              {pesticideRecipe["quantity_of_pesticide_3"]} л (кг).
+              Amount of {pesticideRecipe["pesticide_3"]} on field{" "}
+              {pesticideRecipe["quantity_of_pesticide_3"]} l (kg).
             </p>
           ) : null}
         </div>
@@ -66,14 +66,14 @@ function FieldRecipe(props) {
         <div>
           {fertilizeSasRecipe["quantity_of_sas"] !== null ? (
             <p>
-              Количество {fertilizeSasRecipe["sas"]} на поле{" "}
-              {fertilizeSasRecipe["quantity_of_sas"]} л.
+              Amount of {fertilizeSasRecipe["sas"]} on field{" "}
+              {fertilizeSasRecipe["quantity_of_sas"]} l.
             </p>
           ) : null}
           {fertilizeSasRecipe["quantity_of_complex_fertilize"] !== null ? (
             <p>
-              Количество {fertilizeSasRecipe["complex_fertilizer"]} на поле{" "}
-              {fertilizeSasRecipe["quantity_of_complex_fertilize"]} л (кг).
+              Amount of {fertilizeSasRecipe["complex_fertilizer"]} on field{" "}
+              {fertilizeSasRecipe["quantity_of_complex_fertilize"]} l (kg).
             </p>
           ) : null}
         </div>
@@ -106,9 +106,9 @@ function FieldRecipe(props) {
 
   return (
     <div>
-      <h5>Рецепт на поле</h5>
-      <p>Количество РТ RO 260 (Ж-) на поле {quantityOfRO260} л</p>
-      <p>Количество РТ RO 203 (pH-) на поле {quantityOfRO203} л</p>
+      <h5>Recipe on field</h5>
+      <p>Amount of gH- on field {quantityOfRO260} l</p>
+      <p>Amount of pH- on field {quantityOfRO203} l</p>
       {recipeDataShow(recipeData)}
     </div>
   );

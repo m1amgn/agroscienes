@@ -7,9 +7,6 @@ import CostsOnField from "./CostsOnField";
 import CostsOnHa from "./CostsOnHa";
 import TestSolution from "./TestSolution";
 import InfoPanel from "./InfoPanel";
-
-import pictureHardness from "../hardness.jpeg";
-import picturepH from "../pH.jpg";
 import "./TankForm.css";
 
 function TankForm() {
@@ -73,7 +70,7 @@ function TankForm() {
     if (postData) {
       postForm(API_URL, postData);
     } else {
-      window.alert("Необходимо, чтобы все поля были заполнены и выбраны!");
+      window.alert("All fields must be filled out and selected!");
     }
   };
 
@@ -97,134 +94,131 @@ function TankForm() {
   return (
     <div className="tank-form-container">
       <div className="tank-form-description">
-        <h3>Калькулятор баковых смесей</h3>
+        <h3>Tankmix calculator</h3>
         <p>
-          Главной проблемой создания многокомпонентных баковых смесей является
-          химическая несовместимость ХСЗР в баковой смеси, а также использование
-          воды для ХСЗР растворения ненадлежащего качества. Так, например,
-          использование смеси фосфорорганических пестицидов в жесткой воде с
-          высокой гидратной щелочностью (pH более 8.2) однозначно приведет к
-          появлению осадка в баковой смеси. В большинстве случаев
-          несовместимость препаратов и используемой воды, как правило,
-          выявляется уже после создания баковой смеси, когда что-то исправить
-          достаточно трудно.
+          The main problem in creating multi-component tank mixes is the
+          chemical incompatibility of pesticides in the tank mix, as well as the
+          use of poor-quality water to dissolve pesticides. For example, the use
+          of a mixture of organophosphorus pesticides in hard water with high
+          hydrate alkalinity (pH over 8.2) will inevitably lead to precipitation
+          in the tank mix. In most cases, the incompatibility of pesticides and
+          water used is usually identified only after the tank mix is created,
+          making it difficult to correct.
         </p>
         <p>
-          В связи с этим предлагается использовать специально разработанный
-          калькулятор, испольуемый для создания моделей баковых смесей. В случае
-          использования воды ненадлежащего для растворения качества предлагается
-          использовать стабилизаторы марки "РТ RO" (Ж- и pH-) для подготовки
-          этой воды с целью недопущения образования осадка. Применение
-          стабилизаторов позволяет использовать для разведения ХСЗР обычную
-          артезианскую или поверхностную воду без необходимости её подготовки на
-          установках умягчения или обратном осмосе. Для снижения жесткости воды
-          достаточно добавить необходимое количество стабилизаторов в
-          обрабатываемую воду и тщательно перемешать.
+          In this regard, it is proposed to use a specially designed calculator
+          for creating models of tank mixtures. In case of using water of
+          improper quality for dissolving, it is suggested to use stabilizers of
+          the "Hardness-" and "pH-" to prepare this water in order to prevent
+          the formation of sediment. The use of stabilizers allows using
+          ordinary artesian or surface water for diluting pesticides without the
+          need for its preparation on softening or reverse osmosis units. To
+          reduce water hardness, it is enough to add the required amount of
+          stabilizers to the processed water and mix thoroughly.
         </p>
-        <InfoPanel title="Определение жесткости">
-          Для определения жесткости тестируемой воды потребуется капельный тест
-          для анализа воды на показатель общей жесткости (gH). Проведение
-          анализа: 1. Прополоскать мерный стакан тестируемой водой. 2. Налить 5
-          мл тестируемой воды. 3. Добавить 5 мл дистиллированной воды и
-          взболтать. 4. Отлить 5 мл воды из мерного стакана. 5. Добавлять
-          индикатор в мерный стакан по каплям, перемешивая содержимое круговыми
-          движениями, до тех пор, пока цвет раствора не изменится от
-          светло-розового через тёмно-розовый или красный к зелёному. Переход
-          происходит быстро, от одной капли. 6. Число капель необходимо умножить
-          на 0,712, полученое значение будет жесткостью тестируемой воды, его
-          необходимо ввести в форму. Для определения требуемой жесткости изучите
-          таблицы ниже.
-          <img className="d-block w-10" src={pictureHardness} alt="Hardness" />
+        <InfoPanel title="Determination of water hardness">
+          Determination of water hardness will require a drop test for the
+          analysis of total hardness (gH). Test procedure: 1. Rinse the
+          measuring cup with the water being tested. 2. Pour 5 ml of the water
+          being tested. 3. Add 5 ml of distilled water and shake. 4. Pour 5 ml
+          of the water from the measuring cup. 5. Add indicator to the measuring
+          cup dropwise, stirring the contents with circular movements until the
+          color of the solution changes from light pink to dark pink or red to
+          green. The transition occurs quickly, after one drop. 6. The number of
+          drops should be multiplied by 0.712, the resulting value will be the
+          hardness of the tested water, which should be entered into the form.
+          To determine the required hardness, refer to the tables below.
           <Table bordered hover size="sm">
             <thead>
               <tr>
-                <td>Вода</td>
-                <td>Жесткость, мг-экв/л</td>
+                <td>Water</td>
+                <td>Hardness, gH</td>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Очень мягкая вода</td>
-                <td>до 1,5</td>
+                <td>Very soft water</td>
+                <td>up to 1.5</td>
               </tr>
               <tr>
-                <td>Мягкая вода</td>
-                <td>от 1,5 до 4</td>
+                <td>Soft water</td>
+                <td>1.5 - 4.0</td>
               </tr>
               <tr>
-                <td>Вода средней жесткости</td>
-                <td>от 4 до 8</td>
+                <td>Average hardness</td>
+                <td>4.0 - 8.0</td>
               </tr>
               <tr>
-                <td>Жесткая вода</td>
-                <td>от 8 до 12</td>
+                <td>Hard water</td>
+                <td>8.0 - 12.0</td>
               </tr>
               <tr>
-                <td>Очень жесткая вода</td>
-                <td>более 12</td>
+                <td>Very hard water</td>
+                <td>more than 12.0</td>
               </tr>
             </tbody>
           </Table>
-          *Рекомендуется использовать воду с жесткостью не более 7,5 мг-экв/л.
+          *It is recommended to use water with a hardness of no more than 7.5
+          gH.
         </InfoPanel>
-        <InfoPanel title="Определение единиц снижения pH">
+        <InfoPanel title="Determination of water pH">
           <p>
-            Кислотность воды или рН. Этот показатель характеризуется мерой
-            активности ионов водорода. Основной диапозон значений pH находится
-            от 1 до 14. Растворы с рН = 1 очень кислые, c ph = 14 очень
-            щелочные; значение pH 7 соответствует нейтральной реакции. В полевых
-            условиях уровень рН можно измерить прибором рН-метр или
-            тест-полосками. Каждый препарат имеет свой оптимальный уровень рН
-            для приготовления рабочего раствора.
+            Acidity of water or pH. This parameter characterizes the measure of
+            activity of hydrogen ions. The main range of pH values is from 1 to
+            14. Solutions with a pH of 1 are very acidic, with a pH of 14 being
+            very alkaline; a pH value of 7 corresponds to a neutral reaction. In
+            field conditions, the pH level can be measured using a pH meter or
+            test strips. Each preparation has its optimal pH level for preparing
+            a working solution
           </p>
           <p>
-            Пестициды, чувствительные к щелочному гидролизу — те, которые быстро
-            распадаются при рН большем 7, например: производные 2,4Д, глифосат,
-            аммонийная соль имазетапира, некоторые пиретроиды, хлороталонил
-            (Браво, КС, Миксанил), ФОС-инсектициды и карбаматы (Ланнат, СП,
-            Метомакс, КС, Талант, СК).
+            Pesticides sensitive to alkaline hydrolysis are those that quickly
+            degrade at a pH greater than 7.0, for example: derivatives of 2,4-D,
+            glyphosate, ammonium salt of imazethapyr, pyrethroids,
+            chlorothalonil, organophosphate insecticides, and carbamates.
           </p>
           <p>
-            В случае, если рН воды, которую вы используете для приготовления
-            рабочего раствора, больше 7, используйте специальные препараты для
-            корректировки pH-. Вода со значением рН 3,5–6,0 приемлемая для
-            приготовления и кратковременного (12–24 часа) хранения некоторых
-            рабочих растворов. Используя воду со значением рН 6,1–7,0 следует
-            сразу применять приготовленную рабочую жидкость. Не храните более
-            1–2 часов, так как впоследствии эффективность препарата значительно
-            снижается. Для воды со значением рН 7,0 и выше обязательно
-            необходимо использовать корректор pH-.
+            In case the pH of the water you are using to prepare the working
+            solution is higher than 7.0, use special pH- correction agents.
+            Water with a pH value of 3.5-6.0 is acceptable for preparing and
+            short-term (12-24 hours) storage of some working solutions. When
+            using water with a pH value of 6.1-7.0, the prepared working
+            solution should be used immediately. Do not store it for more than
+            1-2 hours, as the effectiveness of the solution decreases
+            significantly afterwards. For water with a pH value higher than 7.0,
+            it is essential to use a pH- corrector.
           </p>
           <p>
-            Пестициды, чувствительные к кислотному гидролизу — те, которые
-            быстро распадаются при рН меньшем 7. Представителем данной группы
-            являются сульфонилмочевины (сульфуроны, трибенурон). Если рН
-            рабочего раствора меньше 7, следует или использовать специальные
-            корректоры pH+, либо как можно скорее вносить препарат, пока в
-            результате гидролиза действующее вещество не разрушилось.
+            Pesticides sensitive to acidic hydrolysis are those that rapidly
+            degrade at a pH lower than 7.0. Representatives of this group
+            include sulfonylureas. If the pH of the working solution is less
+            than 7.0, it is necessary to use special pH+ correctors or introduce
+            the preparation as soon as possible, until the active substance has
+            been destroyed as a result of hydrolysis
           </p>
           <p>
-            Таким образом, наиболее оптимальное значение рН для приготовления
-            рабочего раствора – pH = 5-7.
+            Therefore, the most optimal pH value for preparing of the working
+            solution is pH = 5-7.
           </p>
           <p>
-            Для определения pH тестируемой воды потребуются корректор (pH-) PT
-            RO 203 и индикаторные тесты pH. Проведение анализа: Налить в емкость
-            200 мл тестируемой воды, вносить по 0,05 мл инсулиновым шприцом
-            корректор (pH-) РТ RO 203, перемешивая раствор, до изменения цвета
-            лакмусовой полоски до нужного оттенка указанного в наборе данных
-            тестов. Ввести количество в единицах (1 ед. - 0,1 мл корректора).
+            To perform express pH correction of the tested water, you will need
+            a pH- corrector and pH indicator test strips. The analysis procedure
+            is as follows: Pour 200 ml of the tested water into a container, add
+            0.05 ml of pH- corrector using an insulin syringe, and mix the
+            solution until the color of the litmus strip changes to the required
+            shade specified in the test kit. Record the amount of the corrector
+            used in units (1 unit - 0.1 ml of the corrector).
           </p>
-          <img className="d-block w-3" src={picturepH} alt="pH" />
-          *Среднее значение единиц корректора для снижения pH - 1,5.
+          *The recommended average value of correction units for decreasing pH
+          is 1.5.
         </InfoPanel>
       </div>
 
       <form onSubmit={submitHandler}>
         <div className="tank-form">
-          <h5>Обязательные поля для заполнения:</h5>
+          <h5>Required fields to fill in:</h5>
           <div>
-            <label>Количество гектар, Га</label>
+            <label>Quantity of hectares, ha</label>
             <input
               type="number"
               key="quantity_of_ha"
@@ -235,7 +229,7 @@ function TankForm() {
               required
               onChange={inputFieldHandler}
             />
-            <label>Объем бака для воды, м3</label>
+            <label>Volume of tank for treated water, m3</label>
             <input
               type="number"
               key="volume_of_water_tank"
@@ -248,7 +242,7 @@ function TankForm() {
             />
           </div>
           <div>
-            <label>Объем бака распылителя/растворного узла, м3</label>
+            <label>Sprayer tank volume, m3</label>
             <input
               type="number"
               key="volume_of_mixer_tank"
@@ -259,7 +253,7 @@ function TankForm() {
               required
               onChange={inputFieldHandler}
             />
-            <label>Объем внесения рабочего раствора, л/га</label>
+            <label>Consumption of the prepared solution, l/ha</label>
             <input
               type="number"
               key="quantity_of_mixture"
@@ -272,7 +266,7 @@ function TankForm() {
             />
           </div>
           <div>
-            <label>Жесткость используемой воды, Ж</label>
+            <label>Current hardness, gH</label>
             <input
               type="number"
               key="current_hardness"
@@ -283,7 +277,7 @@ function TankForm() {
               required
               onChange={inputFieldHandler}
             />
-            <label>Целевая жесткость, Ж</label>
+            <label>Required hardness, gH</label>
             <input
               type="number"
               key="planing_hardness"
@@ -297,7 +291,7 @@ function TankForm() {
           </div>
 
           <div>
-            <label>Единицы снижения pH</label>
+            <label>Value of correction units for decreasing pH</label>
             <input
               type="number"
               key="decrease_pH"
@@ -310,23 +304,23 @@ function TankForm() {
             />
           </div>
 
-          <h5>Заполните поля при необходимости:</h5>
+          <h5>Fill in the fields if necessary:</h5>
           <div>
-            <label>Введите название пестицида</label>
+            <label>Pesticide name</label>
             <input
               type="text"
               key="pesticide_1"
               name="pesticide_1"
               onChange={inputFieldHandler}
             />
-            <label>Препаративная форма</label>
+            <label>Preparation form</label>
             <input
               type="text"
               key="form_pesticide_1"
               name="form_pesticide_1"
               onChange={inputFieldHandler}
             />
-            <label>Расход л(кг)/га</label>
+            <label>Consumption l(kg)/ha</label>
             <input
               type="number"
               key="consumption_pesticide_1"
@@ -336,7 +330,7 @@ function TankForm() {
               name="consumption_pesticide_1"
               onChange={inputFieldHandler}
             />
-            <label>Цена СЗР</label>
+            <label>Price</label>
             <input
               type="number"
               key="price_pesticide_1"
@@ -348,21 +342,21 @@ function TankForm() {
             />
           </div>
           <div>
-            <label>Введите название пестицида</label>
+            <label>Pesticide name</label>
             <input
               type="text"
               key="pesticide_2"
               name="pesticide_2"
               onChange={inputFieldHandler}
             />
-            <label>Препаративная форма</label>
+            <label>Preparation form</label>
             <input
               type="text"
               key="form_pesticide_2"
               name="form_pesticide_2"
               onChange={inputFieldHandler}
             />
-            <label>Расход л(кг)/га</label>
+            <label>Consumption l(kg)/ha</label>
             <input
               type="number"
               key="consumption_pesticide_2"
@@ -372,7 +366,7 @@ function TankForm() {
               name="consumption_pesticide_2"
               onChange={inputFieldHandler}
             />
-            <label>Цена СЗР</label>
+            <label>Price</label>
             <input
               type="number"
               key="price_pesticide_2"
@@ -384,21 +378,21 @@ function TankForm() {
             />
           </div>
           <div>
-            <label>Введите название пестицида</label>
+            <label>Pesticide name</label>
             <input
               type="text"
               key="pesticide_3"
               name="pesticide_3"
               onChange={inputFieldHandler}
             />
-            <label>Препаративная форма</label>
+            <label>Preparation form</label>
             <input
               type="text"
               key="form_pesticide_3"
               name="form_pesticide_3"
               onChange={inputFieldHandler}
             />
-            <label>Расход л(кг)/га</label>
+            <label>Consumption l(kg)/ha</label>
             <input
               type="number"
               key="consumption_pesticide_3"
@@ -408,7 +402,7 @@ function TankForm() {
               name="consumption_pesticide_3"
               onChange={inputFieldHandler}
             />
-            <label>Цена СЗР</label>
+            <label>Price</label>
             <input
               type="number"
               key="price_pesticide_3"
@@ -420,14 +414,14 @@ function TankForm() {
             />
           </div>
           <div>
-            <label>Введите название ПАВ</label>
+            <label>Surfactant name</label>
             <input
               type="text"
               key="sas"
               name="sas"
               onChange={inputFieldHandler}
             />
-            <label>Норма внесения мл/л рабочего раствора</label>
+            <label>Consumption ml/l prepared solution</label>
             <input
               type="number"
               key="consumption_sas"
@@ -437,7 +431,7 @@ function TankForm() {
               name="consumption_sas"
               onChange={inputFieldHandler}
             />
-            <label>Цена ПАВ</label>
+            <label>Price</label>
             <input
               type="number"
               key="price_sas"
@@ -449,14 +443,14 @@ function TankForm() {
             />
           </div>
           <div>
-            <label>Введите название МКУ</label>
+            <label>Complex fertilizer name</label>
             <input
               type="text"
               key="complex_fertilizer"
               name="complex_fertilizer"
               onChange={inputFieldHandler}
             />
-            <label>Расход л/га</label>
+            <label>Consumption l/ha</label>
             <input
               type="number"
               key="consumption_complex_fertilizer"
@@ -466,7 +460,7 @@ function TankForm() {
               name="consumption_complex_fertilizer"
               onChange={inputFieldHandler}
             />
-            <label>Цена МКУ</label>
+            <label>Price</label>
             <input
               type="number"
               key="price_complex_fertilizer"
@@ -480,7 +474,7 @@ function TankForm() {
 
           <div className="button-container">
             <Button variant="dark" size="sm" type="submit">
-              Рассчитать
+              Calculate
             </Button>
           </div>
         </div>

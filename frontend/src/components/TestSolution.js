@@ -27,20 +27,20 @@ function TestSolution(props) {
         <div>
           {pesticideRecipe["quantity_of_pesticide_1"] !== null ? (
             <p>
-              Добавьте {pesticideRecipe["pesticide_1"]} в количестве{" "}
-              {pesticideRecipe["quantity_of_pesticide_1"]} мл (г).
+              Add {pesticideRecipe["pesticide_1"]} in amount of{" "}
+              {pesticideRecipe["quantity_of_pesticide_1"]} ml (g).
             </p>
           ) : null}
           {pesticideRecipe["quantity_of_pesticide_2"] !== null ? (
             <p>
-              Добавьте {pesticideRecipe["pesticide_2"]} в количестве{" "}
-              {pesticideRecipe["quantity_of_pesticide_2"]} мл (г).
+              Add {pesticideRecipe["pesticide_2"]} in amount of{" "}
+              {pesticideRecipe["quantity_of_pesticide_2"]} ml (g).
             </p>
           ) : null}
           {pesticideRecipe["quantity_of_pesticide_3"] !== null ? (
             <p>
-              Добавьте {pesticideRecipe["pesticide_3"]} в количестве{" "}
-              {pesticideRecipe["quantity_of_pesticide_3"]} мл (г).
+              Add {pesticideRecipe["pesticide_3"]} in amount of{" "}
+              {pesticideRecipe["quantity_of_pesticide_3"]} ml (g).
             </p>
           ) : null}
         </div>
@@ -66,15 +66,14 @@ function TestSolution(props) {
         <div>
           {fertilizeSasRecipe["quantity_of_sas"] !== null ? (
             <p>
-              Далее добавьте {fertilizeSasRecipe["sas"]} (если ПАВ на масляной основе, то
-              добавлять первым) в количестве{" "}
-              {fertilizeSasRecipe["quantity_of_sas"]} мл (г).
+              Then add {fertilizeSasRecipe["sas"]} in amount of{" "}
+              {fertilizeSasRecipe["quantity_of_sas"]} ml (g).
             </p>
           ) : null}
           {fertilizeSasRecipe["quantity_of_complex_fertilize"] !== null ? (
             <p>
-              Далее добавьте {fertilizeSasRecipe["complex_fertilizer"]} в
-              количестве {fertilizeSasRecipe["quantity_of_complex_fertilize"]} мл (г).
+              Then add {fertilizeSasRecipe["complex_fertilizer"]} in amount of{" "}
+              {fertilizeSasRecipe["quantity_of_complex_fertilize"]} ml (g).
             </p>
           ) : null}
         </div>
@@ -92,10 +91,8 @@ function TestSolution(props) {
       let content = [];
       content.push(
         <div>
-          <h5>Тестовый раствор</h5>
-          <p>
-            Тестовый раствор на 1 литр подготовленной воды:
-          </p>
+          <h5>Test solution</h5>
+          <p>Test solution for 1 l prepared water:</p>
           {pesticidesRecipe(recipeDataCopy)}
           {fertilizeSasRecipe(recipeDataCopy)}
         </div>
@@ -104,12 +101,7 @@ function TestSolution(props) {
     }
   };
 
-
-  return (
-    <div>
-      {recipeDataShow(recipeData)}
-    </div>
-  );
+  return <div>{recipeDataShow(recipeData)}</div>;
 }
 
 export default TestSolution;

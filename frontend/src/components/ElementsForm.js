@@ -45,13 +45,13 @@ function ElementsForm() {
         <div>
           <label>
             {key === "quantity_of_water"
-              ? (key = "Среднее количество осадков за сезон, мм")
+              ? (key = "Average precipitation amount per season, mm")
               : key && key === "temperature"
-              ? (key = "Средняя температура вегетации, С")
+              ? (key = "Average temperature per season, С")
               : key && key === "productivity"
-              ? (key = "Планируемая урожайность, ц/га")
+              ? (key = "Planned yield, centner/ha")
               : key && key === key
-              ? (key = "Содержание " + key + " мг/кг почвы")
+              ? (key = "Soil " + key + " content, mg/kg")
               : key}
           </label>
           <input
@@ -61,11 +61,11 @@ function ElementsForm() {
             max="10000"
             step="0.001"
             name={
-              key === "Среднее количество осадков за сезон, мм"
+              key === "Average precipitation amount per season, mm"
                 ? (key = "quantity_of_water")
-                : key && key === "Средняя температура вегетации, С"
+                : key && key === "Average temperature per season, С"
                 ? (key = "temperature")
-                : key && key === "Планируемая урожайность, ц/га"
+                : key && key === "Planned yield, centner/ha"
                 ? (key = "productivity")
                 : key
             }
@@ -114,7 +114,7 @@ function ElementsForm() {
     if (postData) {
       postForm(API_URL, postData);
     } else {
-      window.alert("Необходимо, чтобы все поля были заполнены и выбраны!");
+      window.alert("All fields must be filled out and selected!");
     }
   };
 
@@ -138,22 +138,21 @@ function ElementsForm() {
   return (
     <div className="elements-form-container">
       <div className="elements-form-description">
-        <h3>Калькулятор удобрений</h3>
+        <h3>Nutrient calculator</h3>
         <p>
-          Алгоритмы расчёта базируются на методических рекомендациях по внесению
-          элементов питания с учетом коэффециентов использования питательных
-          элементов из почвы и удобрений, а также на результатах опытных
-          исследований Российских и зарубежных агрохимических университетов.
+          The calculation algorithms are based on methodological recommendations
+          for the application of nutrients, taking into account the coefficients
+          of nutrient uptake from soil and fertilizers, as well as the results
+          of experimental research.
         </p>
         <p>
-          Фундаментельной задачей, решаемой данным расчётом, является Закон
-          ограничивающего (лимитирующего) фактора или Закон минимума Либиха -
-          это один из фундаментальных законов в биологии, гласящий, что наиболее
-          значим для организма тот фактор, который более всего отклоняется от
-          оптимального его значения. Иными словами, продуктивность культурных
-          растений, в первую очередь, зависит от того питательного вещества
-          (минерального элемента), который представлен в почве наиболее слабо
-          относительно его оптимальной концентрации.
+          The fundamental task solved by this calculation is the Law of Limiting
+          Factors or Liebig's Law of the Minimum - one of the fundamental laws
+          in biology that states that the most significant factor for an
+          organism is the one that deviates the most from its optimal value. In
+          other words, the productivity of cultivated plants depends primarily
+          on the nutrient (mineral element) that is most deficient in the soil
+          relative to its optimal concentration.
         </p>
       </div>
       <div className="graph-container" id="chart">
@@ -165,27 +164,24 @@ function ElementsForm() {
       <form onSubmit={submitHandler}>
         <div className="elements-select-form">
           <div className="select-container">
-            <label key="chooseCulture">Выберите культуру:</label>
+            <label key="chooseCulture">Select a crop:</label>
             <select onChange={cultureChangeHandler}>
               <option value="">-------</option>
               {getCulturesList}
             </select>
-            <label key="chooseClimateZone">Выберите климатическую зону:</label>
+            <label key="chooseClimateZone">Select a climatic zone:</label>
             <select onChange={climateZoneChangeHandler}>
               <option value="">-------</option>
               {getClimateZoneList}
             </select>
             <div className="button-container">
               <Button variant="dark" size="sm" type="submit">
-                Рассчитать
+                Calculate
               </Button>
             </div>
           </div>
           <div className="elements-form">
-            <label>
-              Введите данные или воспользуйтесь средними значениями по
-              умолчанию:
-            </label>
+            <label>Enter data or use default average values:</label>
             {getUserForm(userForm)}
           </div>
         </div>

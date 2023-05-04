@@ -1,4 +1,4 @@
-version: '3'
+version: '3.9'
 
 services:
   backend:
@@ -6,11 +6,18 @@ services:
     command: gunicorn backend.wsgi:application --bind 0.0.0.0:8000
     ports:
       - "8000:8000"
-  
   nginx:
     build: ./frontend
     ports:
       - "80:80"
+      - "443:443"
     depends_on:
       - backend
-
+    volumes:
+      - ./certbot/www:/var/www/certbot/:ro
+      - ./certbot/conf/:/etc/nginx/ssl/:ro
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw

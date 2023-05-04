@@ -42,12 +42,12 @@ function BarChart(props) {
     labels: elementsArray,
     datasets: [
       {
-        label: "Доступные элементы в почве, кг/га",
+        label: "Available soil nutrients, kg/ha",
         data: concentrationsArray,
         backgroundColor: "rgba(53, 162, 235, 0.5)",
       },
       {
-        label: "Необходимая концентрация элементов питания, кг/га",
+        label: "Required concentration of nutrients, kg/ha",
         data: consumptionArray,
         backgroundColor: "rgba(255, 99, 132, 0.5)",
       },

@@ -6,8 +6,8 @@ function TableElements(props) {
   const concentrationsValues = props["serverData"]["concentrations"];
   const consumptionsValues = props["serverData"]["consumptions"];
   let elementsArray = [""];
-  let concentrationsArray = ["Доступные элементы в почве, кг/га"];
-  let consumptionsArray = ["Необходимая концентрация элементов питания, кг/га"];
+  let concentrationsArray = ["Available soil nutrients, kg/ha"];
+  let consumptionsArray = ["Required concentration of nutrients, kg/ha"];
 
   if (concentrationsValues) {
     for (let [key, value] of Object.entries(concentrationsValues[0])) {

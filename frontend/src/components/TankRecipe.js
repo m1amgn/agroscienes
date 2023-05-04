@@ -27,20 +27,20 @@ function TankRecipe(props) {
         <div>
           {pesticideRecipe["quantity_of_pesticide_1"] !== null ? (
             <p>
-              Добавьте {pesticideRecipe["pesticide_1"]} в количестве{" "}
-              {pesticideRecipe["quantity_of_pesticide_1"]} л (кг).
+              Add {pesticideRecipe["pesticide_1"]} in amount of{" "}
+              {pesticideRecipe["quantity_of_pesticide_1"]} l (kg).
             </p>
           ) : null}
           {pesticideRecipe["quantity_of_pesticide_2"] !== null ? (
             <p>
-              Добавьте {pesticideRecipe["pesticide_2"]} в количестве{" "}
-              {pesticideRecipe["quantity_of_pesticide_2"]} л (кг).
+              Add {pesticideRecipe["pesticide_2"]} in amount of{" "}
+              {pesticideRecipe["quantity_of_pesticide_2"]} l (kg).
             </p>
           ) : null}
           {pesticideRecipe["quantity_of_pesticide_3"] !== null ? (
             <p>
-              Добавьте {pesticideRecipe["pesticide_3"]} в количестве{" "}
-              {pesticideRecipe["quantity_of_pesticide_3"]} л (кг).
+              Add {pesticideRecipe["pesticide_3"]} in amount of{" "}
+              {pesticideRecipe["quantity_of_pesticide_3"]} l (kg).
             </p>
           ) : null}
         </div>
@@ -66,16 +66,14 @@ function TankRecipe(props) {
         <div>
           {fertilizeSasRecipe["quantity_of_sas"] !== null ? (
             <p>
-              Далее добавьте {fertilizeSasRecipe["sas"]} (если ПАВ на масяной основе, то
-              добавлять первым) в количестве{" "}
-              {fertilizeSasRecipe["quantity_of_sas"]} л.
+              Then add {fertilizeSasRecipe["sas"]} in amount of{" "}
+              {fertilizeSasRecipe["quantity_of_sas"]} l.
             </p>
           ) : null}
           {fertilizeSasRecipe["quantity_of_complex_fertilize"] !== null ? (
             <p>
-              Далее добавьте {fertilizeSasRecipe["complex_fertilizer"]} в
-              количестве {fertilizeSasRecipe["quantity_of_complex_fertilize"]} л
-              (кг).
+              Then add {fertilizeSasRecipe["complex_fertilizer"]} in amount of{" "}
+              {fertilizeSasRecipe["quantity_of_complex_fertilize"]} l (kg).
             </p>
           ) : null}
         </div>
@@ -95,15 +93,15 @@ function TankRecipe(props) {
       let content = [];
       content.push(
         <div>
-          <h5>Рецепт на бак растворного узла/опрыскивателя</h5>
+          <h5>Recipe for the tank of the solution unit</h5>
           <p>
-            Заполнить бак растворного узла подготовленной водой на 2/3, при
-            постоянном перемешивании, вносить препараты в 
-            последовательности, указанной ниже. При этом каждый предыдущий препарат должен
-            полностью раствориться. Для приготовления рабочего раствора из
-            порошков, необходимое количество препарата засыпают в отдельную малую
-            емкость, заливают небольшим количеством воды и встряхивают до
-            получения однородной массы (маточного раствора):
+            Fill the tank of the mixing unit with prepared water up to 2/3 while
+            constantly stirring and add the products in the sequence specified
+            below. Each previous product must be completely dissolved. To
+            prepare a working solution from powders, the required amount of the
+            product is poured into a separate small container, filled with a
+            small amount of water, and shaken until a homogeneous mass is
+            obtained:
           </p>
           {pesticidesRecipe(recipeDataCopy)}
           {fertilizeSasRecipe(recipeDataCopy)}
@@ -118,9 +116,9 @@ function TankRecipe(props) {
 
   return (
     <div>
-      <h5>Рецепт на подготовку воды</h5>
-      <p>Количество РТ RO 260 (Ж-) на емкость воды {quantityOfRO260} л</p>
-      <p>Количество РТ RO 203 (pH-) на емкость воды {quantityOfRO203} л</p>
+      <h5>Recipe for water treatment</h5>
+      <p>Amount of gH- on water tank {quantityOfRO260} l</p>
+      <p>Amount of pH- on water tank {quantityOfRO203} l</p>
       {recipeDataShow(recipeData)}
     </div>
   );

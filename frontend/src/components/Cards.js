@@ -8,27 +8,26 @@ function Cards() {
     <div className="cards-container">
       <Card bg="dark" border="dark" text="light">
         <Card.Body>
-          <Card.Title>Калькулятор удобрений</Card.Title>
+          <Card.Title>Nutrient calculator</Card.Title>
           <Card.Text>
-            Калькулятор удобрений поможет рассчитать необходимое количество
-            элементов питания растений в зависимости от планируемой урожайности
-            и условий вегетации.
+            The nutrient calculator will help you calculate the required amount
+            of plant nutrients based on the planned yield and vegetative
+            conditions.
           </Card.Text>
           <Button variant="outline-secondary">
-            <Link to="/elementsform">Перейти</Link>
+            <Link to="/elementsform">Try</Link>
           </Button>
         </Card.Body>
       </Card>
       <Card bg="dark" border="dark" text="light">
         <Card.Body>
-          <Card.Title>Калькулятор баковых смесей</Card.Title>
+          <Card.Title>Tankmix calculator</Card.Title>
           <Card.Text>
-            Калькулятор баковых смесей поможет подобрать оптимальную композицию
-            стабилизаторов для предотвращения образования осадка в баковых
-            смесях.
+            The tank mix calculator can select the optimal composition of
+            stabilizers to prevent sediment formation in tank mixes.
           </Card.Text>
           <Button variant="outline-secondary">
-            <Link to="/tankform">Перейти</Link>
+            <Link to="/tankform">Try</Link>
           </Button>
         </Card.Body>
       </Card>

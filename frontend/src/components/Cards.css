@@ -7,20 +7,20 @@
     flex-direction: column;
     justify-content: center;
     background-image: url("../plant3.jpg");
-    height: 900px;
+    height: 850px;
     max-width: 100%;
     background-size: cover;
     flex: 1;
   }
   
   .card {
-    margin: 5% 30%;
+    margin: 3% 30%;
     opacity: 0.8;
   }
   
   @media (max-width: 600px) {
     .card {
-      margin: 5% 15%;
+      margin: 3% 15%;
     }
   }
   

@@ -27,20 +27,20 @@ function CostsOnHa(props) {
         <div>
           {pesticideCost["costs_of_pesticide_1"] !== null ? (
             <p>
-              {pesticideCost["pesticide_1"]} на Га{" "}
-              {pesticideCost["costs_of_pesticide_1"]} рублей
+              {pesticideCost["pesticide_1"]} on ha{" "}
+              {pesticideCost["costs_of_pesticide_1"]}
             </p>
           ) : null}
           {pesticideCost["costs_of_pesticide_2"] !== null ? (
             <p>
-              {pesticideCost["pesticide_2"]} на Га{" "}
-              {pesticideCost["costs_of_pesticide_2"]} рублей
+              {pesticideCost["pesticide_2"]} on ha{" "}
+              {pesticideCost["costs_of_pesticide_2"]}
             </p>
           ) : null}
           {pesticideCost["costs_of_pesticide_3"] !== null ? (
             <p>
-              {pesticideCost["pesticide_3"]} на Га{" "}
-              {pesticideCost["costs_of_pesticide_3"]} рублей
+              {pesticideCost["pesticide_3"]} on ha{" "}
+              {pesticideCost["costs_of_pesticide_3"]}
             </p>
           ) : null}
         </div>
@@ -66,14 +66,13 @@ function CostsOnHa(props) {
         <div>
           {fertilizeSasCost["costs_of_sas"] !== null ? (
             <p>
-              {fertilizeSasCost["sas"]} на Га {fertilizeSasCost["costs_of_sas"]}{" "}
-              рублей
+              {fertilizeSasCost["sas"]} on ha {fertilizeSasCost["costs_of_sas"]}{" "}
             </p>
           ) : null}
           {fertilizeSasCost["costs_of_complex_fertilize"] !== null ? (
             <p>
-              {fertilizeSasCost["complex_fertilizer"]} на Га{" "}
-              {fertilizeSasCost["costs_of_complex_fertilize"]} рублей
+              {fertilizeSasCost["complex_fertilizer"]} on ha{" "}
+              {fertilizeSasCost["costs_of_complex_fertilize"]}{" "}
             </p>
           ) : null}
         </div>
@@ -106,9 +105,9 @@ function CostsOnHa(props) {
 
   return (
     <div>
-      <h5>Стоимость на Га</h5>
-      <p>РТ RO 260 (Ж-) на Га {costsOfRO260} рублей</p>
-      <p>РТ RO 203 (pH-) на Га {costsOfRO203} рублей</p>
+      <h5>Cost on ha</h5>
+      <p>gH- on ha {costsOfRO260}</p>
+      <p>pH- on ha {costsOfRO203}</p>
       {costDataShow(costsData)}
     </div>
   );

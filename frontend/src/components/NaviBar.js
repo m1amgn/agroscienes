@@ -12,13 +12,13 @@ function NaviBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link>
-              <Link to="/">Главная</Link>
+              <Link to="/">Main</Link>
             </Nav.Link>
             <Nav.Link>
-              <Link to="/elementsform">Калькулятор удобрений</Link>
+              <Link to="/elementsform">Nutrient calculator</Link>
             </Nav.Link>
             <Nav.Link>
-              <Link to="/tankform">Калькулятор баковых смесей</Link>
+              <Link to="/tankform">Tankmix calculator</Link>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
