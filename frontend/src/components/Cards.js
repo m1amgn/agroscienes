@@ -15,7 +15,7 @@ function Cards() {
             conditions.
           </Card.Text>
           <Button variant="outline-secondary">
-            <Link to="/elementsform">Try</Link>
+            <Link to="/elementsform">Next</Link>
           </Button>
         </Card.Body>
       </Card>
@@ -27,7 +27,7 @@ function Cards() {
             stabilizers to prevent sediment formation in tank mixes.
           </Card.Text>
           <Button variant="outline-secondary">
-            <Link to="/tankform">Try</Link>
+            <Link to="/tankform">Next</Link>
           </Button>
         </Card.Body>
       </Card>
