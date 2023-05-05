@@ -17,3 +17,4 @@ services:
   certbot:
     image: certbot/certbot
     volumes:
+      - ./certs:/etc/letsencrypt
