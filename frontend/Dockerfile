@@ -9,7 +9,8 @@ RUN npm run build
 FROM nginx:1.21.4-alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 WORKDIR /usr/share/nginx/html
+RUN apt-get update && \
+    apt-get install -y certbot python-certbot-nginx
 RUN rm -rf ./*
 COPY --from=builder /app/frontend/build .
-EXPOSE 80
 ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
