@@ -6,11 +6,10 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-FROM nginx
+FROM nginx:1.21.4-alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 WORKDIR /usr/share/nginx/html
-RUN apt-get update && apt-get install -y certbot python3-certbot-nginx
-RUN certonly --webroot --webroot-path=/var/www/html --email your.email@example.com --agree-tos -d example.com
 RUN rm -rf ./*
-COPY --from=builder /app/frontend/build .
-ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
+COPY --from=builder /app/react-frontend/build .
+EXPOSE 80 443
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
