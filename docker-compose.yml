@@ -17,5 +17,3 @@ services:
   certbot:
     image: certbot/certbot
     volumes:
-      - ./certs:/etc/letsencrypt
-    command: certonly --webroot --webroot-path=/var/www/html --email your.email@example.com --agree-tos -d example.com
