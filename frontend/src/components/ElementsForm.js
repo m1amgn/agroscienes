@@ -6,6 +6,7 @@ import "./ElementsForm.css";
 
 function ElementsForm() {
   const API_URL = "http://127.0.0.1:8000/api/calcfertapi/";
+  // deploy: https://domen.com/api/calcfertapi/
 
   const [dataToForm, setDataToForm] = useState("");
   const [postData, setPostData] = useState("");
@@ -51,7 +52,7 @@ function ElementsForm() {
               : key && key === "productivity"
               ? (key = "Planned yield, t/ha")
               : key && key === key
-              ? (key = "Soil " + key + " content, mg/kg")
+              ? "Soil " + key + " content, mg/kg"
               : key}
           </label>
           <input

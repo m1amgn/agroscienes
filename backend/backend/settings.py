@@ -139,3 +139,12 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:8000',
     'http://127.0.0.1:8000',
 ]
+CSRF_TRUSTED_ORIGINS = [
+    'http://agroscientist.com',
+    'https://agroscientist.com',
+    'http://localhost:3000',
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+    'http://212.237.219.86',
+    'https://212.237.219.86'
+]

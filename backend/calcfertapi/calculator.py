@@ -23,5 +23,5 @@ def calculate_consumptions(form_data):
     for values in obj:
         for key, value in values.items():
             if key not in ['id', 'culture_id']:
-                calculated_consumptions_dict[key] = round(float(value) * float(form_data['productivity']*10), 2)
+                calculated_consumptions_dict[key] = round(float(value) * float(form_data['productivity']) * 10, 2)
     return calculated_consumptions_dict

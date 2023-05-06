@@ -10,7 +10,9 @@ import InfoPanel from "./InfoPanel";
 import "./TankForm.css";
 
 function TankForm() {
-  const API_URL = "http://127.0.0.1:8000//api/calctankapi/";
+  const API_URL = "http://127.0.0.1:8000/api/calctankapi/";
+  // deploy: https://domen.com/api/calctankapi/
+
   const postDataForm = {
     quantity_of_ha: "",
     volume_of_water_tank: "",
