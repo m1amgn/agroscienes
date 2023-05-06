@@ -49,7 +49,7 @@ function ElementsForm() {
               : key && key === "temperature"
               ? (key = "Average temperature per season, С")
               : key && key === "productivity"
-              ? (key = "Planned yield, centner/ha")
+              ? (key = "Planned yield, t/ha")
               : key && key === key
               ? (key = "Soil " + key + " content, mg/kg")
               : key}
@@ -65,7 +65,7 @@ function ElementsForm() {
                 ? (key = "quantity_of_water")
                 : key && key === "Average temperature per season, С"
                 ? (key = "temperature")
-                : key && key === "Planned yield, centner/ha"
+                : key && key === "Planned yield, t/ha"
                 ? (key = "productivity")
                 : key
             }
