@@ -38,18 +38,18 @@ class UserFormData(models.Model):
         
 
 class FieldRecipe(models.Model):
-    quantity_of_RO260 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
-    quantity_of_RO203 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    quantity_of_RO260 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
+    quantity_of_RO203 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     pesticide_1 = models.CharField(max_length=20, blank=True, null=True)
-    quantity_of_pesticide_1 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    quantity_of_pesticide_1 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     pesticide_2 = models.CharField(max_length=20, blank=True, null=True)
-    quantity_of_pesticide_2 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    quantity_of_pesticide_2 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     pesticide_3 = models.CharField(max_length=20, blank=True, null=True)
-    quantity_of_pesticide_3 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    quantity_of_pesticide_3 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     sas = models.CharField(max_length=20, blank=True, null=True)
-    quantity_of_sas = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    quantity_of_sas = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     complex_fertilizer = models.CharField(max_length=20, blank=True, null=True)
-    quantity_of_complex_fertilize = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    quantity_of_complex_fertilize = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     created_timestamp = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
@@ -60,18 +60,18 @@ class FieldRecipe(models.Model):
         verbose_name_plural = 'Рецепты на поле'
 
 class TankRecipe(models.Model):
-    quantity_of_RO260 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
-    quantity_of_RO203 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    quantity_of_RO260 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
+    quantity_of_RO203 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     pesticide_1 = models.CharField(max_length=20, blank=True, null=True)
-    quantity_of_pesticide_1 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    quantity_of_pesticide_1 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     pesticide_2 = models.CharField(max_length=20, blank=True, null=True)
-    quantity_of_pesticide_2 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    quantity_of_pesticide_2 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     pesticide_3 = models.CharField(max_length=20, blank=True, null=True)
-    quantity_of_pesticide_3 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    quantity_of_pesticide_3 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     sas = models.CharField(max_length=20, blank=True, null=True)
-    quantity_of_sas = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    quantity_of_sas = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     complex_fertilizer = models.CharField(max_length=20, blank=True, null=True)
-    quantity_of_complex_fertilize = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    quantity_of_complex_fertilize = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     created_timestamp = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
@@ -82,16 +82,16 @@ class TankRecipe(models.Model):
         verbose_name_plural = 'Рецепты на бак'
         
 class TestSolution(models.Model):
-    quantity_of_RO260 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
-    quantity_of_RO203 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    quantity_of_RO260 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
+    quantity_of_RO203 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     pesticide_1 = models.CharField(max_length=20, blank=True, null=True)
-    quantity_of_pesticide_1 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    quantity_of_pesticide_1 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     pesticide_2 = models.CharField(max_length=20, blank=True, null=True)
-    quantity_of_pesticide_2 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    quantity_of_pesticide_2 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     pesticide_3 = models.CharField(max_length=20, blank=True, null=True)
-    quantity_of_pesticide_3 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    quantity_of_pesticide_3 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     sas = models.CharField(max_length=20, blank=True, null=True)
-    quantity_of_sas = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    quantity_of_sas = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     complex_fertilizer = models.CharField(max_length=20, blank=True, null=True)
     quantity_of_complex_fertilize = models.DecimalField(max_digits=20, decimal_places=2, blank=True, null=True)
     created_timestamp = models.DateTimeField(auto_now_add=True)
@@ -104,18 +104,18 @@ class TestSolution(models.Model):
         verbose_name_plural = 'Тестовые раствор'
         
 class CostsOnField(models.Model):
-    costs_of_RO260 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
-    costs_of_RO203 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    costs_of_RO260 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
+    costs_of_RO203 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     pesticide_1 = models.CharField(max_length=20, blank=True, null=True)
-    costs_of_pesticide_1 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    costs_of_pesticide_1 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     pesticide_2 = models.CharField(max_length=20, blank=True, null=True)
-    costs_of_pesticide_2 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    costs_of_pesticide_2 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     pesticide_3 = models.CharField(max_length=20, blank=True, null=True)
-    costs_of_pesticide_3 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    costs_of_pesticide_3 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     sas = models.CharField(max_length=20, blank=True, null=True)
-    costs_of_sas = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    costs_of_sas = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     complex_fertilizer = models.CharField(max_length=20, blank=True, null=True)
-    costs_of_complex_fertilize = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    costs_of_complex_fertilize = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     created_timestamp = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
@@ -126,18 +126,18 @@ class CostsOnField(models.Model):
         verbose_name_plural = 'Затраты на поле'
 
 class CostsOnHa(models.Model):
-    costs_of_RO260 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
-    costs_of_RO203 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    costs_of_RO260 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
+    costs_of_RO203 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     pesticide_1 = models.CharField(max_length=20, blank=True, null=True)
-    costs_of_pesticide_1 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    costs_of_pesticide_1 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     pesticide_2 = models.CharField(max_length=20, blank=True, null=True)
-    costs_of_pesticide_2 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    costs_of_pesticide_2 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     pesticide_3 = models.CharField(max_length=20, blank=True, null=True)
-    costs_of_pesticide_3 = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    costs_of_pesticide_3 = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     sas = models.CharField(max_length=20, blank=True, null=True)
-    costs_of_sas = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    costs_of_sas = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     complex_fertilizer = models.CharField(max_length=20, blank=True, null=True)
-    costs_of_complex_fertilize = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    costs_of_complex_fertilize = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
     created_timestamp = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):

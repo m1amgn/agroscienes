@@ -116,36 +116,36 @@ class DefaultElementsConcentration(models.Model):
 
 class ElementsConsumption(models.Model):
     culture = models.ForeignKey(Culture, on_delete=models.CASCADE, null=True)
-    N = models.DecimalField(max_digits=6, decimal_places=3,
+    N = models.DecimalField(max_digits=7, decimal_places=3,
                             blank=True, null=True, default=0)
-    P = models.DecimalField(max_digits=6, decimal_places=3,
+    P = models.DecimalField(max_digits=7, decimal_places=3,
                             blank=True, null=True, default=0)
-    K = models.DecimalField(max_digits=6, decimal_places=3,
+    K = models.DecimalField(max_digits=7, decimal_places=3,
                             blank=True, null=True, default=0)
     Mg = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
-    S = models.DecimalField(max_digits=6, decimal_places=3,
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
+    S = models.DecimalField(max_digits=7, decimal_places=3,
                             blank=True, null=True, default=0)
     Ca = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     Fe = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     Mn = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     Zn = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     Cu = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
-    B = models.DecimalField(max_digits=6, decimal_places=3,
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
+    B = models.DecimalField(max_digits=7, decimal_places=3,
                             blank=True, null=True, default=0)
     Mo = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     Co = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     Ni = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     Se = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
 
     def __str__(self):
         return f'{self.culture}'
@@ -156,36 +156,36 @@ class ElementsConsumption(models.Model):
 
 
 class CalculatedConcentration(models.Model):
-    N = models.DecimalField(max_digits=6, decimal_places=3,
+    N = models.DecimalField(max_digits=7, decimal_places=3,
                             blank=True, null=True, default=0)
-    P = models.DecimalField(max_digits=6, decimal_places=3,
+    P = models.DecimalField(max_digits=7, decimal_places=3,
                             blank=True, null=True, default=0)
-    K = models.DecimalField(max_digits=6, decimal_places=3,
+    K = models.DecimalField(max_digits=7, decimal_places=3,
                             blank=True, null=True, default=0)
     Mg = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
-    S = models.DecimalField(max_digits=6, decimal_places=3,
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
+    S = models.DecimalField(max_digits=7, decimal_places=3,
                             blank=True, null=True, default=0)
     Ca = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     Fe = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     Mn = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     Zn = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     Cu = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
-    B = models.DecimalField(max_digits=6, decimal_places=3,
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
+    B = models.DecimalField(max_digits=7, decimal_places=3,
                             blank=True, null=True, default=0)
     Mo = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     Co = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     Ni = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     Se = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     created_timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -197,36 +197,36 @@ class CalculatedConcentration(models.Model):
 
 
 class CalculatedConsumption(models.Model):
-    N = models.DecimalField(max_digits=6, decimal_places=3,
+    N = models.DecimalField(max_digits=7, decimal_places=3,
                             blank=True, null=True, default=0)
-    P = models.DecimalField(max_digits=6, decimal_places=3,
+    P = models.DecimalField(max_digits=7, decimal_places=3,
                             blank=True, null=True, default=0)
-    K = models.DecimalField(max_digits=6, decimal_places=3,
+    K = models.DecimalField(max_digits=7, decimal_places=3,
                             blank=True, null=True, default=0)
     Mg = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
-    S = models.DecimalField(max_digits=6, decimal_places=3,
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
+    S = models.DecimalField(max_digits=7, decimal_places=3,
                             blank=True, null=True, default=0)
     Ca = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     Fe = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     Mn = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     Zn = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     Cu = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
-    B = models.DecimalField(max_digits=6, decimal_places=3,
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
+    B = models.DecimalField(max_digits=7, decimal_places=3,
                             blank=True, null=True, default=0)
     Mo = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     Co = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     Ni = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     Se = models.DecimalField(
-        max_digits=6, decimal_places=3, blank=True, null=True, default=0)
+        max_digits=7, decimal_places=3, blank=True, null=True, default=0)
     created_timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
