@@ -8,3 +8,7 @@ docker images
 sudo systemctl start docker
 sudo systemctl enable docker
 docker logs name
+
+apk update
+apk add certbot
+certbot renew
